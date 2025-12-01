@@ -1,0 +1,22 @@
+section {
+    height: 100vh;
+    width: 100vw;
+    margin: -10px;
+    padding: -10px;
+}
+
+.intro {
+    background: #f0f0f0;
+}
+
+.fakta {
+    background: #ffffff;
+}
+
+.karrusel {
+    background: #f0f0f0;
+}
+
+.beregner {
+    background: #ffffff;
+}
