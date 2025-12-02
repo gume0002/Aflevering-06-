@@ -122,7 +122,7 @@ section {
 }
 
 
-.fakta > div {
+.fakta div {
     flex: 1 1 calc(50% - 1.5rem);
     background: #ffffff;
     border: 1px solid #ececec;
@@ -132,11 +132,6 @@ section {
     min-height: 120px;
     display: flex;
     align-items: center;
-}
-
-
-.fakta > div p {
-    margin: 0;
 }
 
 
