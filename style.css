@@ -104,53 +104,23 @@ body {
     font-weight: 400;
     text-align: center;
 }
-
-
 .fakta {
-    background: #ffffff;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolonner */
     gap: 1.5rem;
     max-width: 1100px;
     margin: 3rem auto;
-    padding: 0;
 }
 
-
 .fakta div {
-    flex: 1 1 calc(50% - 1.5rem);
     background: #ffffff;
     border: 1px solid #ececec;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    padding: 1.75rem 2rem;
-    min-height: 120px;
+    padding: 2rem;
+    min-height: 200px;
+
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
 }
-
-.chart-section {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 200px;
-}
-
-.info-box {
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    padding: 1rem;
-
-}
-
-#chart {
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    padding: 1rem;
-}
-.info-box,
-#chart {
-
-}
-
-
-
