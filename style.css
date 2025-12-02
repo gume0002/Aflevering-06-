@@ -10,6 +10,8 @@ section {
 }
 .hero {
     position: relative;
+    overflow: hidden;
+
 }
 
 .hero::after { /* Fået hjælp af chatgpt til hvordan gradienten kommer ovenpå billedet */
