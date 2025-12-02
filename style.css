@@ -125,3 +125,22 @@ body {
     flex-direction: column;
     justify-content: flex-start;
 }
+
+.chart-section {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+    padding: 1rem;
+}
+
+.info-box {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin: 20px;
+}
+
+#chart {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin: 20px;
+}
