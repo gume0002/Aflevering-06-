@@ -111,18 +111,19 @@ section {
 }
 
 
-/* Container til de 4 kort */
 .fakta {
+    background: #ffffff;
     display: flex;
-    flex-wrap: wrap;              /* gør at de kan ligge i 2 rækker */
-    gap: 1.5rem;                  /* mellemrum vandret + lodret */
-    max-width: 1100px;            /* hvor bred hele blokken må være */
-    margin: 3rem auto;            /* centrerer på siden */
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0;
 }
 
-/* Alle 4 bokse styles ens */
+
 .fakta > div {
-    flex: 1 1 calc(50% - 1.5rem); /* ca. 2 bokse pr. række */
+    flex: 1 1 calc(50% - 1.5rem);
     background: #ffffff;
     border: 1px solid #ececec;
     border-radius: 16px;
@@ -131,6 +132,11 @@ section {
     min-height: 120px;
     display: flex;
     align-items: center;
+}
+
+
+.fakta > div p {
+    margin: 0;
 }
 
 
