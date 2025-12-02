@@ -7,20 +7,20 @@ section {
     width: 100%;
 }
 .intro {
-    background: #f0f0f0;
+    background: navajowhite;
 }
 
 .fakta {
-    background: #ffffff;
+    background: #FAEBD7;
 }
 
 .karrusel {
-    background: #f0f0f0;
+    background: #FAEBD7;
 }
 
 
 .beregner {
-    background: #ffffff;
+    background: #FAEBD7;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
@@ -33,7 +33,7 @@ section {
 }
 .collection{
     height: 100vh;
-    background-color: #1e232e;
+    background-color: navajowhite;
     display: flex;
     justify-content: center;
     align-items: center;
