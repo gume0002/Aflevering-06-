@@ -69,7 +69,7 @@ section {
 
 .collection {
     height: 100vh;
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,67 +110,27 @@ section {
 }
 
 
+/* Container til de 4 kort */
 .fakta {
     display: flex;
-    flex-wrap: wrap;          /* gør så de kan ligge i 2 rækker */
-    gap: 2rem;                /* lige stort mellemrum mellem alle bokse */
-    max-width: 1000px;        /* hvor bredt hele sektionen må være */
-    margin: 0 auto;           /* centrerer sektionen på siden */
+    flex-wrap: wrap;              /* gør at de kan ligge i 2 rækker */
+    gap: 1.5rem;                  /* mellemrum vandret + lodret */
+    max-width: 1100px;            /* hvor bred hele blokken må være */
+    margin: 3rem auto;            /* centrerer på siden */
 }
 
-.fakta-box {
-    flex: 1 1 calc(50% - 2rem);   /* ca. halv bredde pr. kort */
-    background: #fff;
-    border: 1px solid #e5e5e5;    /* lys, diskret border */
-    border-radius: 12px;          /* runde hjørner */
-    padding: 1.5rem 2rem;         /* luft inde i kortet */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* blød skygge som på billedet */
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-
-/*
-.fakta{
+/* Alle 4 bokse styles ens */
+.fakta > div {
+    flex: 1 1 calc(50% - 1.5rem); /* ca. 2 bokse pr. række */
+    background: #ffffff;
+    border: 1px solid #ececec;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    padding: 1.75rem 2rem;
+    min-height: 120px;
     display: flex;
-    justify-content: center;
-    gap: 15rem;
-    border-radius: 10px;
-    margin: 0 auto;
+    align-items: center;
 }
 
-.fakta-kompetencer{
-    border: 2px solid black;
-    width: 20rem;
-    border-radius: 10px;
-    margin-left: 30rem;
-    margin-top: 10rem;
-    margin-bottom: 30rem;
-}
-
-.fakta-hvad-vil-det-sige{
-    border: 2px solid black;
-    width: 20rem;
-    border-radius: 10px;
-    margin-top: 40rem;
-    margin-bottom: 5rem;
-}
-
-.fakta-fleksibilitet-stabilitet{
-    border: 2px solid black;
-    width: 20rem;
-    border-radius: 10px;
-    margin-top: 40rem;
-    margin-bottom: 5rem;
-}
-
-.fakta-brug-erfaring{
-    border: 2px solid black;
-    width: 20rem;
-    border-radius: 10px;
-    margin-right: 30rem;
-    margin-top: 10rem;
-    margin-bottom: 30rem;
-}
 
 
