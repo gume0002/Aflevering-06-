@@ -8,29 +8,43 @@ section {
     width: 100%;
 
 }
+
 .hero {
     position: relative;
+    width: 100%;
+    height: 797px;
     overflow: hidden;
-
 }
 
-.hero::after { /* Fået hjælp af chatgpt til hvordan gradienten kommer ovenpå billedet */
+/* Gradient oven på billedet */
+.hero::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg,rgba(245, 245, 245, 1) 40%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(90deg, rgba(245, 245, 245, 1) 40%, rgba(0, 0, 0, 0) 100%);
     pointer-events: none;
-    z-index: 2;
+    z-index: 1;
 }
 
 .hero img {
     width: 100%;
-    height: 797px;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    z-index: 1;
+    z-index: 0;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: black;
+    font-size: 3rem;
 }
 
 .fakta {
@@ -49,7 +63,8 @@ section {
     font-family: "poppins";
     color: #fff;
 }
-.collection{
+
+.collection {
     height: 100vh;
     background-color: whitesmoke;
     display: flex;
@@ -57,31 +72,34 @@ section {
     align-items: center;
 }
 
-.collection .content{
+.collection .content {
     height: 28rem;
     width: 25rem;
     background-color: white;
-    border: .2rem solid rgba(255,255,255,.1);
+    border: .2rem solid rgba(255, 255, 255, .1);
     border-radius: .7rem;
     overflow: hidden;
 }
 
-.content img{
+.content img {
     width: 100%;
     border-bottom-left-radius: .6rem;
     border-bottom-right-radius: .6rem;
 }
-.text-content{
+
+.text-content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.text-content h3{
+
+.text-content h3 {
     font-size: 1.7rem;
     font-weight: 500;
 }
-.text-content p{
+
+.text-content p {
     max-width: 22rem;
     font-size: .8rem;
     font-weight: 400;
