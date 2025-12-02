@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: "poppins";
 }
 
 section {
@@ -42,7 +43,7 @@ section {
     top: 50%;
     left: 10%;
     transform: translateY(-50%);
-    z-index: 2;
+    z-index: 3;
     color: black;
     font-size: 3rem;
 }
@@ -60,8 +61,6 @@ section {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "poppins";
-    color: #fff;
 }
 
 .collection {
