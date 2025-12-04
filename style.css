@@ -136,15 +136,6 @@ body {
     overflow: hidden;
 }
 
-
-
-.content img {
-    width: 100%;
-    border-bottom-left-radius: .6rem;
-    border-bottom-right-radius: .6rem;
-}
-
-
 /* KARRUSEL SLUT */
 
 .chart-section {
