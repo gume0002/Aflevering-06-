@@ -22,7 +22,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(210, 160, 110, 1), rgba(245, 245, 245, 0.3));
+    background: linear-gradient(90deg,rgba(255, 212, 255, 1) 29%, rgba(0, 0, 0, 0) 70%);
+
 
 
     pointer-events: none;
@@ -36,7 +37,8 @@ body {
     display: block;
     z-index: 0;
     margin-left: 45rem;
-    margin-top: 40px;
+    margin-top: 140px;
+    border-radius: 130px 500px;
 }
 
 .hero-text {
