@@ -83,7 +83,7 @@ function renderChart(labels, values, userValues) {
                 {
                 label: 'Eksempel data',
                 data: values,
-                backgroundColor: ['green']
+                backgroundColor: ['pink'],
             },
             {
                 label: 'Eksempel data',
