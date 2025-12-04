@@ -59,12 +59,12 @@ body {
 }
 
 .beregner {
-    background: white;
+    background: #FCFCFC;
 }
 
 .collection {
     height: 100vh;
-    background-color: white;
+    background-color: #FCFCFC;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +73,7 @@ body {
 .collection .content {
     height: 28rem;
     width: 25rem;
-    background-color: white;
+    background-color: #FCFCFC;
     border: .2rem solid rgba(255, 255, 255, .1);
     border-radius: .7rem;
     overflow: hidden;
@@ -114,19 +114,19 @@ body {
     hyphens: auto;
 }
 
-.fakta > * { /*Se om dette kan skrives på en anden måde*/
+.fakta div { /*Se om dette kan skrives på en anden måde*/
     transition: 0.3s ease;
     outline: 2px solid transparent;
 }
 
-.fakta > *:hover { /* Se om dette kan skrives på en anden måde*/
-    outline: 2px solid red;
-    background-color: darkblue;
+.fakta div:hover { /* Se om dette kan skrives på en anden måde*/
+    outline: 2px solid black;
+    background-color: #FFD4FF;
     transform: translateY(-5px);
 }
 
 .fakta div {
-    background: powderblue;
+    background: #FCEDFC;
     border: 1px solid #ececec;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
