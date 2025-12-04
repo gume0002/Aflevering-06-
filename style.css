@@ -121,12 +121,12 @@ body {
 
 .fakta > *:hover { /* Se om dette kan skrives på en anden måde*/
     outline: 2px solid red;
-    background-color: hotpink;
+    background-color: darkblue;
     transform: translateY(-5px);
 }
 
 .fakta div {
-    background: #ffffff;
+    background: powderblue;
     border: 1px solid #ececec;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
