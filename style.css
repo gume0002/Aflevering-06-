@@ -109,7 +109,8 @@ body {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     padding: 2rem;
     min-height: 100px;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -141,20 +142,20 @@ body {
     border-bottom-right-radius: .6rem;
 }
 
-/* VENSTRE fade */
+/* VENSTRE FADE */
 .karrusel::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 500px;               /* hvor bred fade er */
+    width: 500px;
     height: 100%;
     pointer-events: none;
     background: linear-gradient(to right, #FFD4FF 30%, transparent);
     z-index: 2;
 }
 
-/* HØJRE fade */
+/* HØJRE FADE */
 .karrusel::after {
     content: "";
     position: absolute;
