@@ -59,7 +59,7 @@ body {
 }
 
 .fakta {
-    background: white;
+    background: #FCFCFC;
 }
 
 .beregner {
@@ -68,7 +68,7 @@ body {
 
 .collection {
     height: 100vh;
-    background-color: #FCCDAC;
+    background-color: #FCFCFC;
     display: flex;
     justify-content: center;
     align-items: center;
