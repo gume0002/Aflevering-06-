@@ -1,12 +1,17 @@
+/* HELE HJEMMESIDEN */
+
 body {
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
 }
+/* HELE HJEMMESIDEN SLUT */
 
+
+/* FRONT PAGE / HERO IMAGE */
 .hero {
     position: relative;
     width: 100%;
@@ -14,7 +19,6 @@ body {
     overflow: hidden;
 }
 
-/* Gradient oven på billedet */
 .hero::after {
     content: "";
     position: absolute;
@@ -22,31 +26,46 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 15%, rgba(0, 0, 0, 0) 61%);
-
-
+    background: linear-gradient(90deg,rgba(255, 212, 255, 1) 29%, rgba(0, 0, 0, 0) 70%);
     pointer-events: none;
     z-index: 1;
+
 }
 
 .hero img {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     object-fit: cover;
     display: block;
     z-index: 0;
+    margin-left: 45rem;
+    margin-top: 140px;
+    border-radius: 130px 500px;
 }
+/* FRONT PAGE / HERO TEXT */
 
-.hero-text {
+.hero-text h1 {
     position: absolute;
-    top: 48%;
-    left: 3%;
-    max-width: 35%;
+    top: 27%;
+    left: 10%;
+    max-width: 5%;
     transform: translateY(-50%);
     z-index: 3;
     color: black;
-    font-size: 1.4rem;
+    font-size: 5rem;
+    font-weight: 800;
+}
 
+.hero-text em {
+    position: absolute;
+    top: 55%;
+    left: 10%;
+    max-width: 30%;
+    transform: translateY(-50%);
+    z-index: 3;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 200;
 }
 
 .hero h1{
@@ -54,55 +73,13 @@ body {
     margin-bottom: 50px;
 }
 
+/* FRONT PAGE / HERO TEXT SLUT */
+
+/* FAKTA BOKSE */
 .fakta {
     background: white;
 }
 
-.beregner {
-    background: white;
-}
-
-.collection {
-    height: 100vh;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.collection .content {
-    height: 28rem;
-    width: 25rem;
-    background-color: white;
-    border: .2rem solid rgba(255, 255, 255, .1);
-    border-radius: .7rem;
-    overflow: hidden;
-}
-
-.content img {
-    width: 100%;
-    border-bottom-left-radius: .6rem;
-    border-bottom-right-radius: .6rem;
-}
-
-.text-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.text-content h3 {
-    font-size: 1.7rem;
-    font-weight: 500;
-}
-
-.text-content p {
-    max-width: 22rem;
-    font-size: .8rem;
-    font-weight: 400;
-    text-align: center;
-}
 .fakta {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Fået hjælp fra chatgpt */
@@ -114,19 +91,19 @@ body {
     hyphens: auto;
 }
 
-.fakta > * {
+.fakta div {
     transition: 0.3s ease;
     outline: 2px solid transparent;
 }
 
-.fakta > *:hover {
-    outline: 2px solid red;
-    background-color: hotpink;
+.fakta div:hover {
+    outline: 2px solid black;
+    background-color: #FFD4FF;
     transform: translateY(-5px);
 }
 
 .fakta div {
-    background: #ffffff;
+    background: #FCEDFC;
     border: 1px solid #ececec;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
@@ -137,6 +114,37 @@ body {
     flex-direction: column;
     justify-content: flex-start;
 }
+/* FAKTA BOKSE SLUT */
+
+/* KARRUSEL START */
+
+.karrusel {
+    height: 100vh;
+    background-color: #FCFCFC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.karrusel .content {
+    height: 28rem;
+    width: 25rem;
+    background-color: #FFD4FF;
+    border: .2rem solid rgba(255, 255, 255, .1);
+    border-radius: .7rem;
+    overflow: hidden;
+}
+
+
+
+.content img {
+    width: 100%;
+    border-bottom-left-radius: .6rem;
+    border-bottom-right-radius: .6rem;
+}
+
+
+/* KARRUSEL SLUT */
 
 .chart-section {
     display: flex;
