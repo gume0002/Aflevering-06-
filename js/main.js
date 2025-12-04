@@ -1,3 +1,9 @@
+let labels;
+let values;
+let userValue;
+let myChart = null;
+
+
 // Fetch function
 // Function must be marked 'async' to use 'await'
 async function fetchSalariesAsync() {
@@ -11,8 +17,14 @@ async function fetchSalariesAsync() {
 
         // Pauses execution until the JSON parsing promise resolves
         const data = await response.json();
+
+        // Example: extract labels and values for Chart.js
+        labels = data.map(row => row.year);
+        values = data.map(row => row.salary);
+
         console.log('Data from server:', data);
-        return data
+        // return data
+        return renderChart(labels, values, null)
 
     } catch (error) {
         // Catches any error from the fetch, response.json(), or the HTTP check
@@ -28,6 +40,66 @@ async function fetchSalariesAsync() {
         console.error("Fatal Error during script execution:", e);
     }
 })();
+
+
+// Get the input element
+const saveButton = document.getElementById('submit-button');
+const salaryInput = document.getElementById('yearly-salary');
+
+
+saveButton.addEventListener('click', () => {
+    let userSalaryArray = []
+    userValue = parseFloat(salaryInput.value);
+    let newValue = userValue
+
+    if (isNaN(userValue) || userValue <= 0) {
+        alert("Please enter a valid salary.");
+        return;
+    }
+
+    for (let i = 0; i < labels.length; i++) {
+        userSalaryArray.push(Math.round(newValue))
+        newValue = newValue * 1.02
+
+
+    }
+    //const userSalaryArray = new Array(labels.length).fill(userValue);
+    console.log(userSalaryArray)
+    myChart.destroy()
+    return renderChart(labels, values, userSalaryArray)
+    //console.log(userValues)
+});
+
+
+
+const ctx = document.querySelector('#chart').getContext('2d');
+
+function renderChart(labels, values, userValues) {
+    myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                label: 'Eksempel data',
+                data: values,
+                backgroundColor: ['green']
+            },
+            {
+                label: 'Eksempel data',
+                data: userValues,
+                backgroundColor: ['red']
+            }]
+    },
+        options: {
+                responsive: true, // This is true by default, but good to be explicit
+                maintainAspectRatio: false, // Set to FALSE to force it to fill the height of the container
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+}
 
 
 
@@ -48,23 +120,6 @@ let swiper = new Swiper(".mySwiper", {
     pagination: {
         el: ".swiper-pagination",
     },
-});
-
-
-const ctx = document.querySelector('#chart').getContext('2d');
-
-const chart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: 'Eksempel data',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'red', 'blue', 'yellow', 'green', 'purple', 'orange'
-            ]
-        }]
-    }
 });
 
 

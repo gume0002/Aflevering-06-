@@ -1,4 +1,4 @@
-// 1. Load Environment Variables from .env file
+    // 1. Load Environment Variables from .env file
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors'
@@ -38,8 +38,7 @@ app.get('/api/salaries', async (req, res) => {
 
     // The admin client is used to fetch data bypassing Row Level Security
     const { data, error } = await supabaseAdmin
-        .from('salaries')
-        .select('*');
+        .rpc('get_yearly_average_salary')
 
     if (error) {
         console.error("Supabase Error:", error);
