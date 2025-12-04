@@ -151,8 +151,22 @@
         <p>LOREM IPSUM AWHDAHWDHAWHD</p>
     </div>
 
+    <div class="input-field">
+        <label for="yearly-salary">Monthly Salary (DKK):</label>
+        <input
+                type="number"
+                id="yearly-salary"
+                name="yearly-salary"
+                min="0"
+                step="1"
+                placeholder="e.g., 65000"
+                required
+        >
+        <button id="submit-button">Submit</button>
+    </div>
+
     <div class="chart">
-        <canvas id="chart" style="width:800%;max-width:800px"></canvas>
+        <canvas id="chart"></canvas>
 
     </div>
 
