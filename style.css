@@ -114,6 +114,17 @@ body {
     hyphens: auto;
 }
 
+.fakta > * {
+    transition: 0.3s ease;
+    outline: 2px solid transparent;
+}
+
+.fakta > *:hover {
+    outline: 2px solid red;
+    background-color: hotpink;
+    transform: translateY(-5px);
+}
+
 .fakta div {
     background: #ffffff;
     border: 1px solid #ececec;
