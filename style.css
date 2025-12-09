@@ -196,12 +196,14 @@ text-align: center;
 }
 
 /* Mute knap */
-.mute-button{
-    margin-left: 25.2%;
-    margin-top: 0.5%;
-    font-size: 250%;
+.mute-button {
     position: absolute;
-    z-index: 10; /*Gør at tekst er oven på billedet*/
+    top: 1%;              /* hvor højt oppe knappen skal være */
+    left: 50%;              /* midten af skærmen */
+    transform: translateX(-50%); /* træk den tilbage med halv bredde */
+
+    font-size: 250%;
+    z-index: 10;
     border-radius: 50px;
     background: transparent;
     border: 2px solid black;
