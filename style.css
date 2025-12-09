@@ -248,6 +248,7 @@ text-align: center;
     background-color: #934FB3;
     color: white;
     height: 30px;
-    width: 80px;
+    border: none;
+    padding: 0 25px 0 25px;
 
 }
