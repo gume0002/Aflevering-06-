@@ -2,6 +2,7 @@ let labels;
 let values;
 let userValue;
 let myChart = null;
+let data;
 
 
 // Fetch function
@@ -16,7 +17,7 @@ async function fetchSalariesAsync() {
         }
 
         // Pauses execution until the JSON parsing promise resolves
-        const data = await response.json();
+        data = await response.json();
 
         // Example: extract labels and values for Chart.js
         labels = data.map(row => row.year);
@@ -42,15 +43,26 @@ async function fetchSalariesAsync() {
 })();
 
 
-// Get the input element
+
+// Global button and input references (Good)
 const saveButton = document.getElementById('submit-button');
 const salaryInput = document.getElementById('yearly-salary');
 
-
-saveButton.addEventListener('click', () => {
+// -----------------------------------------------------------------
+// 1. EXECUTION FUNCTION: This holds the logic that runs on click/Enter.
+// -----------------------------------------------------------------
+function handleCalculationExecution() {
     let userSalaryArray = []
-    userValue = parseFloat(salaryInput.value);
+    // IMPORTANT: userValue and data are expected to be available globally
+    // or passed as parameters. Assuming they are global for this fix.
+    let userValue = parseFloat(salaryInput.value);
     let newValue = userValue
+    // Check if data is loaded before accessing it
+    if (!data || data.length === 0) {
+        console.error("Data not loaded yet.");
+        return;
+    }
+    const itAVGLast = data[data.length-1].salary
 
     if (isNaN(userValue) || userValue <= 0) {
         alert("Please enter a valid salary.");
@@ -61,16 +73,46 @@ saveButton.addEventListener('click', () => {
     for (let i = 0; i < labels.length; i++) {
         userSalaryArray.push(Math.round(newValue))
         newValue = newValue * 1.02
-
-
     }
-    //const userSalaryArray = new Array(labels.length).fill(userValue);
-    console.log(userSalaryArray)
-    // destroy first chart and print new chart with user salary
-    myChart.destroy()
+
+    const userSalaryLast = userSalaryArray[userSalaryArray.length-1]
+
+    // Ensure myChart exists before destroying
+    if (myChart) {
+        myChart.destroy()
+    }
+
+    compareDifference(itAVGLast, userSalaryLast)
+
     return renderChart(labels, values, userSalaryArray)
+}
+
+
+// -----------------------------------------------------------------
+// 2. SETUP (Called once, typically inside DOMContentLoaded)
+// -----------------------------------------------------------------
+
+// Attach the listener once for 'click'
+saveButton.addEventListener('click', handleCalculationExecution);
+
+// Attach the listener once for 'keydown' (Enter key)
+salaryInput.addEventListener('keydown', function(event) {
+    // Check if the pressed key is 'Enter'
+    if (event.key === 'Enter') {
+        //event.preventDefault(); // Stop default action
+
+        // Execute the calculation logic
+        handleCalculationExecution();
+    }
 });
 
+// Note: You must remove the original call: calculateUserSalary()
+// and ensure these listeners run only after the DOM is fully loaded.
+
+function compareDifference(itAVG, userSalary) {
+    //get it avg year 2050
+    console.log(Math.trunc(itAVG - userSalary))
+}
 
 // Render chart
 const ctx = document.querySelector('#chart').getContext('2d');
