@@ -74,7 +74,6 @@ body {
 }
 .hero-text em {
     position: absolute;
-    top: 55%;
     left: 10%;
     max-width: 30%;
     transform: translateY(-50%);
