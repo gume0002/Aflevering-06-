@@ -38,7 +38,6 @@ body {
     background: linear-gradient(90deg,rgba(116, 3, 168, 1) 11%, rgba(236, 236, 236, 0.16) 100%);
     pointer-events: none;
     z-index: 1;
-
 }
 
 .hero img {
@@ -65,8 +64,9 @@ body {
     font-size: 5rem;
     font-weight: 800;
 }
+
 .red-word {
-    color: #ecb3ae; /* din røde farve */
+    color: #ecb3ae;
 }
 
 
