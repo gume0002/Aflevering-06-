@@ -48,11 +48,6 @@ function handleCalculationExecution() {
     let userSalaryArray = []
     let userValue = parseFloat(salaryInput.value);
     let newValue = userValue
-    // Check if data is loaded before accessing it
-    /*if (!data || data.length === 0) {
-        console.error("Data not loaded yet.");
-        return;
-    }*/
     const itAVGLast = data[data.length-1].salary
 
     if (isNaN(userValue) || userValue <= 0) {
