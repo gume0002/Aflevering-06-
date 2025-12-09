@@ -172,9 +172,6 @@ body {
 }
 
 /* VENSTRE FADE */
-.beregner-h1 {
-text-align: center;
-}
 
 
 .karrusel::before {
@@ -279,6 +276,11 @@ text-align: center;
     font-weight: 600;
     cursor: pointer;
 }
+
+.beregner-h1 {
+    text-align: center;
+}
+
 
 #submit-button:hover {
     opacity: 0.9;
