@@ -11,13 +11,14 @@
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
 </head>
 
 <body>
 <section class="logo">
     <a href="index.html">
-    <img src="ek-logo.png" alt="ek logo - billede af svale" height="150" width="150">
+        <img src="ek-logo.png" alt="ek logo - billede af svale" height="100" width="100">
     </a>
 </section>
 <section class="hero">
@@ -79,7 +80,6 @@
 </section>
 
 
-
 <section class="beregner"></section>
 
 <div class="beregner-h1">
@@ -90,10 +90,12 @@
 
     <div class="info-box">
         <h2>LØNBEREGNER</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            like Aldus including versions of Lorem Ipsum.</p>
+        <p>Med vores lønberegner kan du hurtigt få et klart billede af, hvordan din løn kan udvikle sig. <br>
+            Indsæt din nuværende månedsløn, og se hvor meget mere du potentielt kunne tjene med en IT-uddannelse.
+            Beregneren viser både din nuværende lønbane og en typisk lønudvikling inden for IT, så du nemt kan
+            sammenligne og få et
+            visuelt overblik over forskellen år for år.</p>
+
 
         <div class="input-field">
             <label for="yearly-salary">Din Nuværende Månedsløn:</label>
@@ -113,7 +115,7 @@
             <button id="submit-button" type="button">Beregn</button>
         </div>
         <!-- SIDEPANEL MED INFO OM HVORDAN VI HAR BEREGNET -->
-
+        <br>
         <a href="#" id="open-panel" class="info-text">Sådan har vi beregnet</a>
 
         <div id="sidepanel" class="sidepanel">
@@ -130,7 +132,12 @@
         <canvas id="chart"></canvas>
     </div>
 
+
 </section>
+
+<div class="salary-difference-div">
+    <p class="salary-difference-p"></p>
+</div>
 
 <!-- Swiper/Karrusel -->
 <section class="karrusel">
