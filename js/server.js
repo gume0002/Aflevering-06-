@@ -6,9 +6,6 @@ import { createClient } from '@supabase/supabase-js';
 
 const PORT = process.env.PORT || 3001;
 const SUPABASE_URL = process.env.SUPABASE_URL;
-
-// 🔥🔥🔥 IMPORTANT: USE THE SECURE SERVICE ROLE KEY 🔥🔥🔥
-// This client has admin access and must NEVER be exposed to the browser.
 const supabaseAdmin = createClient(SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY, {
     auth: { persistSession: false }, // Prevent caching of user session
 });
@@ -28,11 +25,7 @@ app.use(cors());
 // Middleware 2: JSON body parsing
 app.use(express.json());
 
-// ----------------------------------------------------
-// 3. Define the RESTful Endpoint (Your API)
-// ----------------------------------------------------
-
-// Example Endpoint: Retrieve all salaries securely
+// Create endpoint and get average of IT salaries for each year
 app.get('/api/salaries', async (req, res) => {
     console.log("Request received for /api/salaries");
 
