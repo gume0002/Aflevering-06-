@@ -243,3 +243,38 @@ text-align: center;
     width: 80px;
 
 }
+
+/* SIDEPANEL */
+
+.sidepanel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: white;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+.sidepanel.active {
+    right: 0;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 900;
+}
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidepanel p{
+    pointer-events: none;
+    text-decoration: none;
+}
