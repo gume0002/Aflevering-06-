@@ -76,14 +76,14 @@ saveButton.addEventListener('click', () => {
 const ctx = document.querySelector('#chart').getContext('2d');
 
 function renderChart(labels, values, userValues) {
-    // Create gradients for a sleek modern look
+    // Create gradients for the fill (Background)
     let gradientIT = ctx.createLinearGradient(0, 0, 0, 400);
-    gradientIT.addColorStop(0, 'rgba(128, 52, 128, 0.4)');
-    gradientIT.addColorStop(1, 'rgba(128, 52, 128, 0)');
+    gradientIT.addColorStop(0, 'rgba(128, 52, 128, 0.5)'); // Slightly more opaque at top
+    gradientIT.addColorStop(1, 'rgba(128, 52, 128, 0.0)');
 
     let gradientUser = ctx.createLinearGradient(0, 0, 0, 400);
-    gradientUser.addColorStop(0, 'rgba(73, 73, 73, 0.4)');
-    gradientUser.addColorStop(1, 'rgba(73, 73, 73, 0)');
+    gradientUser.addColorStop(0, 'rgba(73, 73, 73, 0.5)');
+    gradientUser.addColorStop(1, 'rgba(73, 73, 73, 0.0)');
 
     myChart = new Chart(ctx, {
         type: 'line',
@@ -91,22 +91,22 @@ function renderChart(labels, values, userValues) {
             labels: labels,
             datasets: [
                 {
-                    label: 'IT ',
+                    label: 'IT-gennemsnit ',
                     data: values,
                     backgroundColor: gradientIT,
-                    borderColor: '#803480',
-                    borderWidth: 2,
+                    borderColor: '#803480', // Reverted to solid color
+                    borderWidth: 2, // Reverted to original width
                     pointRadius: 0,
                     pointHoverRadius: 6,
                     fill: true,
                     tension: 0.4
                 },
                 {
-                    label: 'Din nuværende indkomst',
+                    label: 'Nuværende indkomst',
                     data: userValues,
                     backgroundColor: gradientUser,
-                    borderColor: '#494949',
-                    borderWidth: 2,
+                    borderColor: '#494949', // Reverted to solid color
+                    borderWidth: 2, // Reverted to original width
                     pointRadius: 0,
                     pointHoverRadius: 6,
                     fill: true,
@@ -125,13 +125,7 @@ function renderChart(labels, values, userValues) {
             },
             plugins: {
                 legend: {
-                    labels: {
-                        usePointStyle: true,
-                        boxWidth: 8,
-                        font: {
-                            family: "'Inter', sans-serif"
-                        }
-                    }
+                    display: false
                 },
                 title: {
                     display: true,
