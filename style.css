@@ -179,21 +179,15 @@ text-align: center;
 }
 
 /* Mute knap */
-.image-container {
-    position: relative;   /* Gør overlay muligt */
-    display: inline-block;
-}
-
 .mute-button{
-    margin-left: 25%;
-    margin-bottom: 1%;
+    margin-left: 25.2%;
+    margin-top: 0.5%;
     font-size: 250%;
     position: absolute;
-    display: inline-block;
     z-index: 10; /*Gør at tekst er oven på billedet*/
-    border: none;
-    background: none;
-
+    border-radius: 50px;
+    background: transparent;
+    border: 2px solid black;
 }
 
 /* Mute knap SLUT */
