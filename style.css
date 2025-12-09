@@ -291,6 +291,22 @@ body {
     justify-content: center;
 }
 
+.salary-difference {
+    background-color: #934FB3;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.salary-difference-p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
 /* SIDEPANEL */
 
 .sidepanel {
