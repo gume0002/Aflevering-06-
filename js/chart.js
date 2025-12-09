@@ -114,7 +114,7 @@ function compareDifference(itAVG, userSalary) {
     console.log(Math.trunc(itAVG - userSalary))
     const difference = Math.trunc(itAVG - userSalary)
     const element = document.querySelector('.salary-difference-p')
-    element.textContent = `Du vil tjene ${difference} mindre i år 2050`
+    element.textContent = `Du vil tjene ${difference}DKK mindre i år 2050`
 
 }
 
