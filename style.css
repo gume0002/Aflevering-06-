@@ -122,7 +122,7 @@ body {
 .karrusel {
     position: relative;
     height: 100vh;
-    background-color: #FFD4FF;
+    background-color: #ececec;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,7 +151,7 @@ body {
     width: 500px;
     height: 100%;
     pointer-events: none;
-    background: linear-gradient(to right, #FFD4FF 30%, transparent);
+    background: linear-gradient(to right, #ececec 30%, transparent);
     z-index: 2;
 }
 
@@ -164,7 +164,7 @@ body {
     width: 500px;
     height: 100%;
     pointer-events: none;
-    background: linear-gradient(to left, #FFD4FF 30%, transparent);
+    background: linear-gradient(to left, #ececec 30%, transparent);
     z-index: 2;
 }
 
