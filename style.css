@@ -90,7 +90,7 @@ body {
 
 .about{
     margin-top: 10vh;
-    text-align: left;
+    text-align: center;
     font-size: 30px;
     margin-left: 40px;
 }
@@ -223,6 +223,7 @@ text-align: center;
     justify-content: center;
     gap: 2rem;
     padding: 2rem 1rem;
+    margin-bottom: 70px;
 }
 
 .info-box {
