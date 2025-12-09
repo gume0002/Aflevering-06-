@@ -12,9 +12,10 @@ body {
 
 /* LOGO START */
 .logo {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 1;
 }
 /* LOGO SLUT */
 
@@ -98,6 +99,7 @@ body {
 
 .fakta {
     background: white;
+    z-index: 5;
 }
 
 .fakta {
