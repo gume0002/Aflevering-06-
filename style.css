@@ -178,10 +178,21 @@ text-align: center;
     z-index: 2;
 }
 
+.image-container {
+    position: relative;   /* Gør overlay muligt */
+    display: inline-block;
+}
+
 .mute-button{
-    margin-left: 48%;
+    margin-left: 25%;
     margin-bottom: 1%;
     font-size: 250%;
+    position: absolute;
+    display: inline-block;
+    z-index: 10; /*Gør at tekst er oven på billedet*/
+    border: none;
+    background: none;
+
 }
 
 /* KARRUSEL SLUT */
