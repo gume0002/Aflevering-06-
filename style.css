@@ -67,11 +67,7 @@ body {
     color: #ecb3ae; /* din røde farve */
 }
 
-.about {
-    text-align: left;
-    font-size: 30px;
-    margin-left: 40px;
-}
+
 .hero-text em {
     position: absolute;
     left: 10%;
@@ -91,6 +87,14 @@ body {
 /* FRONT PAGE / HERO TEXT SLUT */
 
 /* FAKTA BOKSE */
+
+.about{
+    margin-top: 10vh;
+    text-align: left;
+    font-size: 30px;
+    margin-left: 40px;
+}
+
 .fakta {
     background: white;
 }
@@ -101,7 +105,6 @@ body {
     gap: 4rem;
     max-width: 1400px;
     margin: 1.0rem auto;
-    margin-top: 15vh;
     margin-bottom: 15vh;
     text-align: justify;
     text-justify: inter-word;
@@ -213,53 +216,65 @@ text-align: center;
 
 .beregner-h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .chart-section {
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 50px;
-    padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
 }
 
 .info-box {
-    border-radius: 8px 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin: 20px;
     background-color: #CB87DE;
     color: white;
-    height: 60vh;
-    max-width: 37%;
-    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    flex: 1 1 320px;
+    max-width: 450px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .chart {
-    position: relative;
-    width: 50%;
+    flex: 1 1 320px;
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #chart {
+    width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    margin: 20px;
 }
 
-.input-field{
-    margin-top: 40%;
+.input-field {
+    margin-top: 2rem;
     font-weight: 700;
-
+    font-size: 1rem;
 }
 
-#submit-button{
-    margin-left: 30px;
-    border-radius: 10px 10px;
+#submit-button {
+    margin-top: 1rem;
+    border-radius: 10px;
     background-color: #934FB3;
     color: white;
-    height: 30px;
+    height: 40px;
     border: none;
-    padding: 0 25px 0 25px;
+    padding: 0 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
 
+#submit-button:hover {
+    opacity: 0.9;
 }
 
 /* SIDEPANEL */
