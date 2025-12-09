@@ -220,7 +220,6 @@ text-align: center;
 .chart {
     position: relative;
     width: 50%;
-    height: 50vh;
 }
 
 #chart {
