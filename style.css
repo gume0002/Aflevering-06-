@@ -63,6 +63,9 @@ body {
     font-size: 5rem;
     font-weight: 800;
 }
+.red-word {
+    color: #ecb3ae; /* din røde farve */
+}
 
 .hero-text em {
     position: absolute;
