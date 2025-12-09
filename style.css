@@ -12,9 +12,11 @@ body {
 
 /* LOGO START */
 .logo {
-    position: absolute;
-    top: 20px;     /* afstand fra top */
-    right: 20px;   /* afstand fra højre */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    cursor: pointer;
 }
 /* LOGO SLUT */
 
@@ -63,11 +65,15 @@ body {
     font-size: 5rem;
     font-weight: 800;
 }
+.red-word {
+    color: #ecb3ae; /* din røde farve */
+}
+
 
 .hero-text em {
     position: absolute;
-    top: 55%;
     left: 10%;
+    top: 55%;
     max-width: 30%;
     transform: translateY(-50%);
     z-index: 3;
@@ -84,17 +90,25 @@ body {
 /* FRONT PAGE / HERO TEXT SLUT */
 
 /* FAKTA BOKSE */
+
+.about{
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 40px;
+}
+
 .fakta {
     background: white;
+    z-index: 5;
 }
 
 .fakta {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Fået hjælp fra chatgpt */
-    gap: 1.2rem;
-    max-width: 1100px;
-    margin: 0.1rem auto;
-    margin-top: 15vh;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 1.0rem auto;
     margin-bottom: 15vh;
     text-align: justify;
     text-justify: inter-word;
@@ -118,7 +132,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     padding: 2rem;
-    min-height: 100px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -186,12 +200,14 @@ text-align: center;
 }
 
 /* Mute knap */
-.mute-button{
-    margin-left: 25.2%;
-    margin-top: 0.5%;
-    font-size: 250%;
+.mute-button {
     position: absolute;
-    z-index: 10; /*Gør at tekst er oven på billedet*/
+    top: 1%;              /* hvor højt oppe knappen skal være */
+    left: 50%;              /* midten af skærmen */
+    transform: translateX(-50%); /* træk den tilbage med halv bredde */
+
+    font-size: 250%;
+    z-index: 10;
     border-radius: 50px;
     background: transparent;
     border: 2px solid black;
@@ -204,58 +220,100 @@ text-align: center;
 
 .beregner-h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .chart-section {
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 50px;
-    padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin-bottom: 70px;
 }
 
 .info-box {
-    border-radius: 8px 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin: 20px;
     background-color: #CB87DE;
     color: white;
-    width: 500px;
-    height: 300px;
-    padding: 30px
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    flex: 1 1 320px;
+    max-width: 450px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .chart {
-    position: relative;
-    width: 50%;
+    flex: 1 1 320px;
+    max-width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #chart {
+    width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    margin: 20px;
 }
 
-.input-field{
-    margin-top: 50px;
+.input-field {
+    margin-top: 2rem;
     font-weight: 700;
-    display: flex;
-    justify-content: space-between;
-}
-.submit-button-div {
-    display: flex;
-    justify-content: center;
+    font-size: 1rem;
 }
 
-#submit-button{
-    margin-left: 30px;
-    border-radius: 10px 10px;
+#submit-button {
+    margin-top: 1rem;
+    border-radius: 10px;
     background-color: #934FB3;
     color: white;
-    height: 30px;
+    height: 40px;
     border: none;
-    padding: 0 25px 0 25px;
-    margin-top: 20px;
-
-
+    padding: 0 30px;
+    font-weight: 600;
+    cursor: pointer;
 }
+
+#submit-button:hover {
+    opacity: 0.9;
+}
+
+/* SIDEPANEL */
+
+.sidepanel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: white;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+.sidepanel.active {
+    right: 0;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 900;
+}
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidepanel p{
+    pointer-events: none;
+    text-decoration: none;
+}
+/* SIDEPANEL SLUT */
