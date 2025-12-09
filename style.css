@@ -188,6 +188,7 @@ text-align: center;
     border-radius: 50px;
     background: transparent;
     border: 2px solid black;
+    cursor: pointer;
 }
 
 /* Mute knap SLUT */
