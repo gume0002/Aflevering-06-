@@ -281,6 +281,11 @@ text-align: center;
     opacity: 0.9;
 }
 
+.salary-difference-div {
+    display: flex;
+    justify-content: center;
+}
+
 /* SIDEPANEL */
 
 .sidepanel {
