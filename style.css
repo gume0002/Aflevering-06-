@@ -225,11 +225,27 @@ text-align: center;
 .chart {
     position: relative;
     width: 50%;
-    height: 340px;
+    height: 50vh;
 }
 
 #chart {
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     margin: 20px;
+}
+
+.input-field{
+    margin-top: 80px;
+    font-weight: 700;
+
+}
+
+#submit-button{
+    margin-left: 30px;
+    border-radius: 10px 10px;
+    background-color: #934FB3;
+    color: white;
+    height: 30px;
+    width: 80px;
+
 }
