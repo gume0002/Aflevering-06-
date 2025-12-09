@@ -10,6 +10,13 @@ body {
 }
 /* HELE HJEMMESIDEN SLUT */
 
+/* LOGO START */
+.logo {
+    position: absolute;
+    top: 20px;     /* afstand fra top */
+    right: 20px;   /* afstand fra højre */
+}
+/* LOGO SLUT */
 
 /* FRONT PAGE / HERO IMAGE */
 .hero {
