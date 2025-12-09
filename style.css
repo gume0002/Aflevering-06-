@@ -126,6 +126,9 @@ body {
     transform: translateY(-5px);
 }
 
+.fakta img{
+    margin-bottom: 15px;
+}
 .fakta div {
     background: #F0D4FC;
     border: 1px solid #ececec;
