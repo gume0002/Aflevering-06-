@@ -67,6 +67,11 @@ body {
     color: #ecb3ae; /* din røde farve */
 }
 
+.about {
+    text-align: left;
+    font-size: 30px;
+    margin-left: 40px;
+}
 .hero-text em {
     position: absolute;
     top: 55%;
