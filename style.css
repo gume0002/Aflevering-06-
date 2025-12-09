@@ -26,18 +26,19 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg,rgba(255, 212, 255, 1) 29%, rgba(0, 0, 0, 0) 70%);
+    background: linear-gradient(90deg,rgba(116, 3, 168, 1) 11%, rgba(236, 236, 236, 0.16) 100%);
     pointer-events: none;
     z-index: 1;
 
 }
 
 .hero img {
+    position: relative;
     width: 50%;
     height: 50%;
     object-fit: cover;
     display: block;
-    z-index: 0;
+    z-index: 3;
     margin-left: 45rem;
     margin-top: 140px;
     border-radius: 130px 500px;
@@ -98,12 +99,12 @@ body {
 
 .fakta div:hover {
     outline: 2px solid black;
-    background-color: #FFD4FF;
+    background-color: #934FB3;
     transform: translateY(-5px);
 }
 
 .fakta div {
-    background: #FCEDFC;
+    background: #F0D4FC;
     border: 1px solid #ececec;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
@@ -114,6 +115,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.fakta div:hover{
+    color: white;
 }
 /* FAKTA BOKSE SLUT */
 
