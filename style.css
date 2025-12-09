@@ -67,11 +67,7 @@ body {
     color: #ecb3ae; /* din røde farve */
 }
 
-.about {
-    text-align: left;
-    font-size: 30px;
-    margin-left: 40px;
-}
+
 .hero-text em {
     position: absolute;
     left: 10%;
@@ -91,6 +87,14 @@ body {
 /* FRONT PAGE / HERO TEXT SLUT */
 
 /* FAKTA BOKSE */
+
+.about{
+    margin-top: 10vh;
+    text-align: left;
+    font-size: 30px;
+    margin-left: 40px;
+}
+
 .fakta {
     background: white;
 }
@@ -101,7 +105,6 @@ body {
     gap: 4rem;
     max-width: 1400px;
     margin: 1.0rem auto;
-    margin-top: 15vh;
     margin-bottom: 15vh;
     text-align: justify;
     text-justify: inter-word;
