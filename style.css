@@ -326,3 +326,13 @@ body {
     text-decoration: none;
 }
 /* SIDEPANEL SLUT */
+footer {
+    background-color: red;
+}
+.Ek-informations{
+    display: flex;
+    justify-content: space-between;
+}
+.søg-ind{
+    display: flex;
+}
