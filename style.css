@@ -195,8 +195,8 @@ text-align: center;
 
 .chart {
     position: relative;
-    height: 800px;
-    width: 1000px;
+    height: 600px;
+    width: 800px;
 }
 
 #chart {

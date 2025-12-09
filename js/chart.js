@@ -84,15 +84,16 @@ function renderChart(labels, values, userValues) {
                 {
                     label: 'IT ',
                     data: values,
-                    backgroundColor: ['pink'],
+                    backgroundColor: ['803480'],
+                    border: null,
                     borderColor: '#803480',
                     pointRadius: 0
                 },
                 {
                     label: 'Din nuværende indkomst',
                     data: userValues,
-                    backgroundColor: ['grey'],
-                    borderColor: '#803480',
+                    backgroundColor: ['#E2725B'],
+                    borderColor: '#E2725B',
                     pointRadius: 0
                 }]
         },
