@@ -98,7 +98,7 @@ function compareDifference(itAVG, userSalary) {
     const difference = Math.trunc(itAVG - userSalary)
     const element = document.querySelector('.salary-difference-p')
     element.textContent = `Du vil tjene ${difference}DKK mindre i år 2050`
-
+    document.querySelector(".salary-difference").style.display = "block";
 }
 
 // Render chart
