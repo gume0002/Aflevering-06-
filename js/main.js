@@ -193,3 +193,27 @@ function toggleMute() {
         muteBtn.textContent = "🔇";  // Lyd FRA
     }
 }
+
+const openPanel = document.getElementById("open-panel");
+const closePanel = document.getElementById("close-panel");
+const panel = document.getElementById("sidepanel");
+const overlay = document.getElementById("overlay");
+
+// Åbn sidepanel
+openPanel.addEventListener("click", function(event) {
+    event.preventDefault();
+    panel.classList.add("active");
+    overlay.classList.add("active");
+});
+
+// Lukker sidepanelets kryds X
+closePanel.addEventListener("click", function() {
+    panel.classList.remove("active");
+    overlay.classList.remove("active");
+});
+
+// Luk ved klik på siden
+overlay.addEventListener("click", function() {
+    panel.classList.remove("active");
+    overlay.classList.remove("active");
+});

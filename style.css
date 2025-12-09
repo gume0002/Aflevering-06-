@@ -99,9 +99,9 @@ body {
 .fakta {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Fået hjælp fra chatgpt */
-    gap: 1.2rem;
-    max-width: 1100px;
-    margin: 0.1rem auto;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 1.0rem auto;
     margin-top: 15vh;
     margin-bottom: 15vh;
     text-align: justify;
@@ -126,7 +126,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     padding: 2rem;
-    min-height: 100px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -259,4 +259,39 @@ text-align: center;
     border: none;
     padding: 0 25px 0 25px;
 
+}
+
+/* SIDEPANEL */
+
+.sidepanel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: white;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+.sidepanel.active {
+    right: 0;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 900;
+}
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidepanel p{
+    pointer-events: none;
+    text-decoration: none;
 }
