@@ -237,9 +237,14 @@ text-align: center;
 }
 
 .input-field{
-    margin-top: 80px;
+    margin-top: 50px;
     font-weight: 700;
-
+    display: flex;
+    justify-content: space-between;
+}
+.submit-button-div {
+    display: flex;
+    justify-content: center;
 }
 
 #submit-button{
@@ -250,5 +255,7 @@ text-align: center;
     height: 30px;
     border: none;
     padding: 0 25px 0 25px;
+    margin-top: 20px;
+
 
 }
