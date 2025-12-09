@@ -228,9 +228,9 @@ text-align: center;
     margin: 20px;
     background-color: #CB87DE;
     color: white;
-    width: 500px;
-    height: 300px;
-    padding: 30px
+    height: 60vh;
+    max-width: 40%;
+    padding: 30px;
 }
 
 .chart {
@@ -245,7 +245,7 @@ text-align: center;
 }
 
 .input-field{
-    margin-top: 80px;
+    margin-top: 40%;
     font-weight: 700;
 
 }
@@ -295,3 +295,4 @@ text-align: center;
     pointer-events: none;
     text-decoration: none;
 }
+/* SIDEPANEL SLUT */
