@@ -179,6 +179,12 @@ body {
     z-index: 2;
 }
 
+.mute-button{
+    margin-left: 48%;
+    margin-bottom: 1%;
+    font-size: 250%;
+}
+
 /* KARRUSEL SLUT */
 
 .chart-section {

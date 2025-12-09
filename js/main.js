@@ -102,57 +102,197 @@ function renderChart(labels, values, userValues) {
 }
 
 
-
 // Swiper function
+// =====================================================================
+// 1. Initialiser Swiper-karrusellen
+// =====================================================================
+// Swiper styrer din billed/video-karrusel med coverflow-effekt.
+// Her konfigurerer vi hvordan slideren skal opføre sig.
+// =====================================================================
 
-
-let swiper = new Swiper(".mySwiper", {
+const swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: "auto",
+
+    // Coverflow-stil
     coverflowEffect: {
         rotate: 50,
         stretch: 0,
         depth: 100,
         modifier: 1,
-        slideShadows: true,
-    },
-    pagination: {
-        el: ".swiper-pagination",
+        slideShadows: true
     },
 
+    // Pagination-prikker under slideren
+    pagination: {
+        el: ".swiper-pagination"
+    },
+
+    // Event der kører når et slide skifter
     on: {
         slideChange: function () {
-            handleVideos();
+            handleVideos(); // Stopper gamle videoer og starter den nye
         }
     }
 });
 
-function handleVideos() {
-    const videos = document.querySelectorAll('.slide-video');
 
-    videos.forEach((video, index) => {
-        if (index === swiper.activeIndex) {
-            video.play();
+
+// =====================================================================
+// 2. Funktion der styrer afspilning af videoer
+// =====================================================================
+// Denne funktion finder alle videoer i slideren. Kun den aktive video
+// må spille – alle andre pauses og nulstilles.
+// =====================================================================
+
+function handleVideos() {
+    const videos = document.querySelectorAll(".slide-video");
+
+    // Almindelig for-løkke i stedet for forEach med arrow function
+    for (let i = 0; i < videos.length; i++) {
+        if (i === swiper.activeIndex) {
+            videos[i].play(); // Aktiv video spiller
         } else {
-            video.pause();
-            video.currentTime = 0;
+            videos[i].pause();         // Stop video
+            videos[i].currentTime = 0; // Spol tilbage til start
         }
-    });
+    }
 }
 
+
+
+// =====================================================================
+// 3. AutoAdvance – skift slide automatisk hvert 17 sekund
+// =====================================================================
+// Denne funktion skifter til næste slide og kalder sig selv igen.
+// Arrow function i setTimeout er fjernet og erstattet med function.
+// =====================================================================
+
 function autoAdvance() {
-    setTimeout(() => {
-        swiper.slideNext();
-        autoAdvance();
+    setTimeout(function () {
+        swiper.slideNext(); // Gå til næste slide
+        autoAdvance();      // Kør funktionen igen → loop
     }, 17000);
 }
 
-// Start ved load
+
+
+// =====================================================================
+// 4. Mute / unmute-knap
+// =====================================================================
+// Denne knap muter samtlige videoer i slideren og skifter ikon.
+// Ingen arrow functions — alt er almindelige funktioner.
+// =====================================================================
+
+// -------------------------------------------------------------
+// 1. Hent mute-knappen fra HTML'en
+// -------------------------------------------------------------
+const muteBtn = document.querySelector(".mute-button");
+// Dette finder <button class="mute-button">🔉</button>
+
+
+// -------------------------------------------------------------
+// 2. Tilføj en klik-event på knappen
+// Når knappen klikkes, kaldes funktionen toggleMute()
+// -------------------------------------------------------------
+muteBtn.addEventListener("click", toggleMute);
+
+
+// -------------------------------------------------------------
+// 3. Funktion der muter / unmuter alle videoer i karrusellen
+// -------------------------------------------------------------
+function toggleMute() {
+
+    // Hent alle video-elementer i slideren
+    const videos = document.querySelectorAll(".slide-video");
+
+    // Variabel til at gemme nuværende mute-status
+    // (vi antager at alle videoer har samme mute-state)
+    let isMuted = false;
+
+    // Hvis der findes mindst én video, tjek om den er mutet
+    if (videos.length > 0) {
+        isMuted = videos[0].muted;
+    }
+
+    // ---------------------------------------------------------
+    // 4. Skift mute-status på alle videoer
+    // Hvis de var mutede → unmute
+    // Hvis de ikke var mutede → mute
+    // ---------------------------------------------------------
+    for (let i = 0; i < videos.length; i++) {
+        videos[i].muted = !isMuted;
+    }
+
+    // ---------------------------------------------------------
+    // 5. Opdater ikon på knappen så brugeren kan se status
+    // 🔉  = lyd slået til
+    // 🔇  = lyd slået fra
+    // ---------------------------------------------------------
+    if (isMuted) {
+        muteBtn.textContent = "🔉";  // Lyd TIL
+    } else {
+        muteBtn.textContent = "🔇";  // Lyd FRA
+    }
+}
+
+
+
+// =====================================================================
+// 5. Startfunktioner ved første load
+// =====================================================================
+
+// Start styring af videoer (aktiver den første video)
 handleVideos();
+
+// Start automatisk slide-skift
 autoAdvance();
 
 
 
+// -------------------------------------------------------------
+// 1. Tilføj en klik-event på knappen
+// Når knappen klikkes, kaldes funktionen toggleMute()
+// -------------------------------------------------------------
+muteBtn.addEventListener("click", toggleMute);
 
+
+// -------------------------------------------------------------
+// 2. Funktion der muter / unmuter alle videoer i karrusellen
+// -------------------------------------------------------------
+function toggleMute() {
+
+    // Hent alle video-elementer i slideren
+    const videos = document.querySelectorAll(".slide-video");
+
+    // Variabel til at gemme nuværende mute-status
+    // (vi antager at alle videoer har samme mute-state)
+    let isMuted = false;
+
+    // Hvis der findes mindst én video, tjek om den er mutet
+    if (videos.length > 0) {
+        isMuted = videos[0].muted;
+    }
+
+    // ---------------------------------------------------------
+    // 3. Skift mute-status på alle videoer
+    // Hvis de var mutede → unmute
+    // Hvis de ikke var mutede → mute
+    // ---------------------------------------------------------
+    for (let i = 0; i < videos.length; i++) {
+        videos[i].muted = !isMuted;
+    }
+
+    // ---------------------------------------------------------
+    // 4. Opdater ikon på knappen så brugeren kan se status
+    // 🔉  = lyd slået til
+    // 🔇  = lyd slået fra
+    // ---------------------------------------------------------
+    if (isMuted) {
+        muteBtn.textContent = "🔉";  // Lyd TIL
+    } else {
+        muteBtn.textContent = "🔇";  // Lyd FRA
+    }
+}
