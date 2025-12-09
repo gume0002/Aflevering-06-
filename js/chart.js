@@ -76,6 +76,15 @@ saveButton.addEventListener('click', () => {
 const ctx = document.querySelector('#chart').getContext('2d');
 
 function renderChart(labels, values, userValues) {
+    // Create gradients for a sleek modern look
+    let gradientIT = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientIT.addColorStop(0, 'rgba(128, 52, 128, 0.4)');
+    gradientIT.addColorStop(1, 'rgba(128, 52, 128, 0)');
+
+    let gradientUser = ctx.createLinearGradient(0, 0, 0, 400);
+    gradientUser.addColorStop(0, 'rgba(73, 73, 73, 0.4)');
+    gradientUser.addColorStop(1, 'rgba(73, 73, 73, 0)');
+
     myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -84,22 +93,74 @@ function renderChart(labels, values, userValues) {
                 {
                     label: 'IT ',
                     data: values,
-                    backgroundColor: ['803480'],
-                    border: null,
+                    backgroundColor: gradientIT,
                     borderColor: '#803480',
-                    pointRadius: 0
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    pointHoverRadius: 6,
+                    fill: true,
+                    tension: 0.4
                 },
                 {
                     label: 'Din nuværende indkomst',
                     data: userValues,
-                    backgroundColor: ['#E2725B'],
-                    borderColor: '#E2725B',
-                    pointRadius: 0
+                    backgroundColor: gradientUser,
+                    borderColor: '#494949',
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    pointHoverRadius: 6,
+                    fill: true,
+                    tension: 0.4
                 }]
         },
         options: {
-            responsive: true, // This is true by default, but good to be explicit
-            maintainAspectRatio: false, // Set to FALSE to force it to fill the height of the container
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+                y: {
+                    duration: 1500,
+                    from: 500,
+                    easing: 'easeInOutCubic'
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        usePointStyle: true,
+                        boxWidth: 8,
+                        font: {
+                            family: "'Inter', sans-serif"
+                        }
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'År (Tidslinje)',
+                    position: 'bottom',
+                    align: 'center',
+                    font: {
+                        size: 14,
+                        weight: 'normal',
+                        family: "'Inter', sans-serif"
+                    },
+                    padding: {
+                        top: 20
+                    },
+                    color: '#888'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    backgroundColor: 'rgba(0,0,0,0.8)',
+                    titleFont: { family: "'Inter', sans-serif" },
+                    bodyFont: { family: "'Inter', sans-serif" }
+                }
+            },
+            interaction: {
+                mode: 'nearest',
+                axis: 'x',
+                intersect: false
+            },
             scales: {
                 y: {
                     border: {
@@ -107,19 +168,25 @@ function renderChart(labels, values, userValues) {
                     },
                     beginAtZero: true,
                     grid: {
-                        display: false
+                        display: true,
+                        color: 'rgba(0, 0, 0, 0.03)',
+                        drawBorder: false
+                    },
+                    ticks: {
+                        color: '#aaa',
+                        font: {
+                            family: "'Inter', sans-serif"
+                        }
                     }
                 },
                 x: {
-                    ticks: {
-                        stepSize: 10,
-                        maxRotation: 0,
-                        minRotation: 0
+                    grid: {
+                        display: false
                     },
                     border: {
                         display: false
                     },
-                    grid: {
+                    ticks: {
                         display: false
                     }
                 }
