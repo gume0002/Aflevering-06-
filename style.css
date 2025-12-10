@@ -369,7 +369,7 @@ footer {
     font-size: 25px;
     text-align: center;
 }
-button {
+.button-design {
     appearance: none;
     background-color: #FFFFFF;
     border-radius: 40em;
@@ -395,17 +395,17 @@ button {
     touch-action: manipulation;
 }
 
-button:hover {
+.button-design:hover {
     background-color: #ecb3ae;
     box-shadow: #ecb3ae 0 -6px 8px inset;
     transform: scale(1.125);
 }
 
-button:active {
+.button-design:active {
     transform: scale(1.025);
 }
 
-button a {
+.button-design a{
     text-decoration: none;
 }
 
