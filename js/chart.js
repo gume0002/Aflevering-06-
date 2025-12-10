@@ -1,4 +1,3 @@
-
 let labels;
 let values;
 let myChart = null;
@@ -51,7 +50,8 @@ async function fetchSalariesAsync() {
 // Calculate and display user salary
 function handleCalculationExecution() {
     let userSalaryArray = []
-    let userValue = parseFloat(salaryInput.value);
+    let cleanedValue = salaryInput.value.replace(/[^\d]/g, ''); // Remove all non-digit characters
+    let userValue = parseFloat(cleanedValue);
     let newValue = userValue
     const itAVGLast = data[data.length-1].salary
 

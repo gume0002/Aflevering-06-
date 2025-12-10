@@ -1,16 +1,10 @@
-/*
-import cleave from 'cleave'
-
 
 const cleave = new Cleave('#yearly-salary', {
     numeral: true,
-    numeralThousandsGroupStyle: 'thousand'
-})
-
-*/
-
-
-
+    numeralThousandsGroupStyle: 'thousand',
+    delimiter: '.',
+    numeralDecimalMark: ','
+});
 
 // Swiper function
 // =====================================================================
