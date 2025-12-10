@@ -1,3 +1,4 @@
+/*
 import cleave from 'cleave'
 
 
@@ -6,6 +7,7 @@ const cleave = new Cleave('#yearly-salary', {
     numeralThousandsGroupStyle: 'thousand'
 })
 
+*/
 
 
 
