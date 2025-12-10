@@ -1,12 +1,12 @@
 let labels;
 let values;
-let userValue;
 let myChart = null;
 let data;
 
+const saveButton = document.getElementById('submit-button');
+const salaryInput = document.getElementById('yearly-salary');
 
 // Fetch function
-// Function must be marked 'async' to use 'await'
 async function fetchSalariesAsync() {
     try {
         // Pauses execution until the fetch promise resolves
@@ -43,25 +43,11 @@ async function fetchSalariesAsync() {
 })();
 
 
-
-// Global button and input references (Good)
-const saveButton = document.getElementById('submit-button');
-const salaryInput = document.getElementById('yearly-salary');
-
-// -----------------------------------------------------------------
-// 1. EXECUTION FUNCTION: This holds the logic that runs on click/Enter.
-// -----------------------------------------------------------------
+// Calculate and display user salary
 function handleCalculationExecution() {
     let userSalaryArray = []
-    // IMPORTANT: userValue and data are expected to be available globally
-    // or passed as parameters. Assuming they are global for this fix.
     let userValue = parseFloat(salaryInput.value);
     let newValue = userValue
-    // Check if data is loaded before accessing it
-    if (!data || data.length === 0) {
-        console.error("Data not loaded yet.");
-        return;
-    }
     const itAVGLast = data[data.length-1].salary
 
     if (isNaN(userValue) || userValue <= 0) {
@@ -83,19 +69,13 @@ function handleCalculationExecution() {
     }
 
     compareDifference(itAVGLast, userSalaryLast)
-
     return renderChart(labels, values, userSalaryArray)
 }
 
 
-// -----------------------------------------------------------------
-// 2. SETUP (Called once, typically inside DOMContentLoaded)
-// -----------------------------------------------------------------
-
-// Attach the listener once for 'click'
+// Event listeners for user salary
 saveButton.addEventListener('click', handleCalculationExecution);
 
-// Attach the listener once for 'keydown' (Enter key)
 salaryInput.addEventListener('keydown', function(event) {
     // Check if the pressed key is 'Enter'
     if (event.key === 'Enter') {
@@ -106,12 +86,10 @@ salaryInput.addEventListener('keydown', function(event) {
     }
 });
 
-// Note: You must remove the original call: calculateUserSalary()
-// and ensure these listeners run only after the DOM is fully loaded.
-
+// Compare salary difference and display it
 function compareDifference(itAVG, userSalary) {
-    //get it avg year 2050
-    console.log(Math.trunc(itAVG - userSalary))
+    // console.log(Math.trunc(itAVG - userSalary))
+
     const difference = Math.trunc(itAVG - userSalary)
     const element = document.querySelector('.salary-difference-p')
     element.textContent = `Du vil tjene ${difference}DKK mindre i år 2050`
