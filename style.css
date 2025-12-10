@@ -341,6 +341,7 @@ body {
     pointer-events: none;
     text-decoration: none;
 }
+
 /* SIDEPANEL SLUT */
 footer {
     background: linear-gradient(270deg,rgba(116, 3, 168, 1) 11%, rgba(236, 236, 236, 0.16) 100%);
@@ -350,8 +351,4 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 50px;
-}
-.søg-ind{
-    justify-content: flex-start;
-    margin-right: 40%;
 }
