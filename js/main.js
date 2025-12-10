@@ -77,7 +77,7 @@ function autoAdvance() {
     setTimeout(function () {
         swiper.slideNext(); // Gå til næste slide
         autoAdvance();      // Kør funktionen igen → loop
-    }, 17000);
+    }, 17100);
 }
 
 
