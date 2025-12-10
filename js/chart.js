@@ -6,6 +6,7 @@ let data;
 const saveButton = document.getElementById('submit-button');
 const salaryInput = document.getElementById('yearly-salary');
 
+
 // Fetch function
 async function fetchSalariesAsync() {
     try {
@@ -43,10 +44,14 @@ async function fetchSalariesAsync() {
 })();
 
 
+
+
+
 // Calculate and display user salary
 function handleCalculationExecution() {
     let userSalaryArray = []
-    let userValue = parseFloat(salaryInput.value);
+    let cleanedValue = salaryInput.value.replace(/[^\d]/g, ''); // Remove all non-digit characters
+    let userValue = parseFloat(cleanedValue);
     let newValue = userValue
     const itAVGLast = data[data.length-1].salary
 
@@ -75,7 +80,6 @@ function handleCalculationExecution() {
 
 // Event listeners for user salary
 saveButton.addEventListener('click', handleCalculationExecution);
-
 salaryInput.addEventListener('keydown', function(event) {
     // Check if the pressed key is 'Enter'
     if (event.key === 'Enter') {
@@ -89,10 +93,11 @@ salaryInput.addEventListener('keydown', function(event) {
 // Compare salary difference and display it
 function compareDifference(itAVG, userSalary) {
     // console.log(Math.trunc(itAVG - userSalary))
-
     const difference = Math.trunc(itAVG - userSalary)
     const element = document.querySelector('.salary-difference-p')
-    element.textContent = `Du vil tjene ${difference}DKK mindre i år 2050`
+    const formatted = difference.toLocaleString('da-DK')
+
+    element.textContent = `Du vil tjene ${formatted} kr. mindre om måneden i år 2050`
     document.querySelector(".salary-difference").style.display = "block";
 }
 

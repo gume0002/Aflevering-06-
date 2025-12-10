@@ -35,14 +35,13 @@ app.get('/api/salaries', async (req, res) => {
 
     if (error) {
         console.error("Supabase Error:", error);
-        // Send a generic 500 error back to the client
+
         return res.status(500).json({
             message: 'Database fetch failed',
             details: error.message
         });
     }
 
-    // Send the data back as a JSON response
     res.json(data);
 });
 

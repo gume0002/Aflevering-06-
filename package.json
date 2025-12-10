@@ -1,9 +1,10 @@
 {
-  "type":"module",
+  "type": "module",
   "dependencies": {
-    "@supabase/supabase-js":"^2.86.0",
-    "cors":"^2.8.5",
-    "dotenv":"^17.2.3",
-    "express":"^5.2.1"
+    "@supabase/supabase-js": "^2.86.0",
+    "cleave": "^1.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
   }
 }
