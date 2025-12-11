@@ -1,3 +1,6 @@
+// Charten er lavet ved hjælp af sparring med OpenAI
+// Brugt til at lave overskrifter til koden
+
 let labels;
 let values;
 let myChart = null;
@@ -34,7 +37,7 @@ async function fetchSalariesAsync() {
     }
 }
 
-// call the fetch function
+// Call the fetch function
 (async () => {
     try {
         await fetchSalariesAsync();
@@ -42,9 +45,6 @@ async function fetchSalariesAsync() {
         console.error("Fatal Error during script execution:", e);
     }
 })();
-
-
-
 
 
 // Calculate and display user salary
@@ -123,8 +123,8 @@ function renderChart(labels, values, userValues) {
                     label: 'IT-gennemsnit ',
                     data: values,
                     backgroundColor: gradientIT,
-                    borderColor: '#803480', // Reverted to solid color
-                    borderWidth: 2, // Reverted to original width
+                    borderColor: '#803480',
+                    borderWidth: 2,
                     pointRadius: 0,
                     pointHoverRadius: 6,
                     fill: true,
@@ -134,8 +134,8 @@ function renderChart(labels, values, userValues) {
                     label: 'Nuværende indkomst',
                     data: userValues,
                     backgroundColor: gradientUser,
-                    borderColor: '#494949', // Reverted to solid color
-                    borderWidth: 2, // Reverted to original width
+                    borderColor: '#494949',
+                    borderWidth: 2,
                     pointRadius: 0,
                     pointHoverRadius: 6,
                     fill: true,
