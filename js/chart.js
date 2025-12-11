@@ -97,7 +97,7 @@ function compareDifference(itAVG, userSalary) {
     const element = document.querySelector('.salary-difference-p')
     const formatted = difference.toLocaleString('da-DK')
 
-    element.textContent = `Du vil komme til at tjene ${formatted} kr. mere om måneden i år 2050`
+    element.innerHTML = `Du vil komme til at tjene <span class="highlight-number">${formatted} kr. mere</span> om måneden i år 2050`;
     document.querySelector(".salary-difference").style.display = "block";
 }
 

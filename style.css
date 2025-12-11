@@ -313,12 +313,13 @@ body {
     margin-top: 1.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: none;
-}
-
-.salary-difference-p {
-    margin: 0;
     font-weight: 600;
     font-size: 1rem;
+}
+
+.highlight-number {
+    color: #ecb3ae;
+    font-weight: 750;
 }
 
 /* SIDEPANEL */
@@ -345,7 +346,6 @@ body {
     margin-right: 15px;
     margin-left: 15px;
 }
-
 
 .panel-link {
     color: white;
