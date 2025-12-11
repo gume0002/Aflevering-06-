@@ -81,7 +81,6 @@ function autoAdvance() {
 }
 
 
-
 // =====================================================================
 // 4. Mute / unmute-knap
 // =====================================================================
@@ -211,22 +210,15 @@ function toggleMute() {
 
     // ---------------------------------------------------------
     // 3. Skift mute-status på alle videoer
-    // Hvis de var mutede → unmute
-    // Hvis de ikke var mutede → mute
-    // ---------------------------------------------------------
     for (let i = 0; i < videos.length; i++) {
         videos[i].muted = !isMuted;
     }
 
-    // ---------------------------------------------------------
     // 4. Opdater ikon på knappen så brugeren kan se status
-    // 🔉  = lyd slået til
-    // 🔇  = lyd slået fra
-    // ---------------------------------------------------------
     if (isMuted) {
-        muteBtn.textContent = "🔉";  // Lyd TIL
+        muteBtn.textContent = "🔉";  // TIL
     } else {
-        muteBtn.textContent = "🔇";  // Lyd FRA
+        muteBtn.textContent = "🔇";  // FRA
     }
 }
 
@@ -242,7 +234,7 @@ openPanel.addEventListener("click", function(event) {
     overlay.classList.add("active");
 });
 
-// Lukker sidepanelets kryds X
+// Lukker sidepanelets kryds med X
 closePanel.addEventListener("click", function() {
     panel.classList.remove("active");
     overlay.classList.remove("active");
