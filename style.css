@@ -424,3 +424,149 @@ footer {
 }
 
 /* FOOTER SLUT */
+
+
+
+/* Responsiv til Mobil Telefon*/
+@media (max-width: 768px) {
+
+    /* Generelt */
+    body {
+        font-size: 14px;
+    }
+
+    .logo {
+        top: 10px;
+        right: 10px;
+        max-width: 80px;
+    }
+
+    /* HERO-SEKTION */
+    .hero {
+        height: auto;
+        padding: 80px 1.5rem 2rem;
+    }
+
+    .hero img {
+        position: static;
+        width: 90%;
+        height: auto;
+        margin: 2rem auto 0;
+        border-radius: 40px;
+    }
+
+    .hero::after {
+        background: linear-gradient(90deg, rgba(116, 3, 168, 1) -25%, rgba(236, 236, 236, 0.16) 100%);
+    }
+
+    .hero-text h1,
+    .hero-text em {
+        position: static;
+        max-width: 100%;
+        transform: none;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .hero-text h1 {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-text em {
+        font-size: 1rem;
+    }
+
+    /* FAKTA & ABOUT */
+    .about {
+        margin-top: 8vh;
+        margin-left: 0;
+        font-size: 1.4rem;
+        padding: 0 1.5rem;
+    }
+
+    .fakta {
+        grid-template-columns: 1fr; /* 1 kolonne på mobil */
+        gap: 1.5rem;
+        margin: 1.5rem 1.5rem 5rem;
+    }
+
+    .fakta div {
+        padding: 1.5rem;
+    }
+
+    /* KARRUSEL */
+    .karrusel {
+        height: auto;
+        padding: 3rem 1rem;
+    }
+
+    .karrusel .content {
+        width: 100%;
+        height: auto;
+        border-radius: .7rem;
+    }
+
+    .content img {
+        border-radius: 0 0 .7rem .7rem;
+    }
+
+    /* Skjul de brede fade på mobil eller gør dem smallere */
+    .karrusel::before,
+    .karrusel::after {
+        width: 80px;
+    }
+
+    .mute-button {
+        top: 0.5rem;
+        font-size: 1.5rem;
+        border-width: 1px;
+    }
+
+    /* BEREGNER / CHART */
+    .chart-section {
+        flex-direction: column;
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    .info-box {
+        max-width: 100%;
+        min-height: auto;
+        padding: 1.5rem;
+    }
+
+    .chart {
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+
+    .salary-difference {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* SIDEPANEL */
+    .sidepanel {
+        width: 100%;
+        right: -100%;
+    }
+
+    /* FOOTER */
+    .Ek-informations {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+
+    .søg-ind {
+        font-size: 1.2rem;
+    }
+
+    .button-design {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* Repsonsiv del slut */
