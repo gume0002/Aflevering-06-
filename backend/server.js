@@ -17,6 +17,7 @@ const supabaseAdmin = createClient(SUPABASE_URL, process.env.SUPABASE_SERVICE_KE
 });
 const app = express();
 
+// Har fået at vide dette eventuelt skal bruges hvis vi deployer - så bare ignorer! (Gemini)
 // Middleware 1: Enable CORS (Allows your frontend to talk to this server)
 /*app.use((req, res, next) => {
     // Replace 'http://localhost:3000' with your actual frontend address in production
