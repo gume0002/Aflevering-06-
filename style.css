@@ -335,13 +335,21 @@ body {
     color: black;
 }
 
-.panel-text {
-    color: white;
-    text-decoration: none;
+.sidepanel.active {
+    right: 0;
 }
 
-.panel-text:hover {
-    text-decoration: underline; /* hvis du stadig vil have hover-effekt */
+.panel-text {
+    color: black;
+    text-decoration: none;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#panel-info {
+    color: darkgray;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .overlay {
