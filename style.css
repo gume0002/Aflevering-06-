@@ -340,10 +340,15 @@ body {
 }
 
 .panel-text {
-    color: black;
+    color: white;
     text-decoration: none;
     margin-right: 15px;
-    margin-left: 15px;
+    font-weight: 200;
+}
+
+.panel-text:hover{
+    text-decoration: underline;
+    color: black;
 }
 
 #panel-info {
