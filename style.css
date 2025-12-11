@@ -378,49 +378,39 @@ footer {
     justify-content: space-between;
     padding: 50px;
 }
+.info-ek a {
+    color: rgba(11, 10, 10, 0.92);
+    text-decoration: none;
+}
+
+.info-ek a:hover {
+    text-decoration: underline;
+}
 
 .søg-ind{
     font-size: 25px;
     text-align: center;
 }
-.button-design {
-    appearance: none;
-    background-color: #FFFFFF;
-    border-radius: 40em;
-    border-style: none;
-    box-shadow: #ADCFFF 0 -12px 6px inset;
-    box-sizing: border-box;
-    color: #000000;
-    cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: -.24px;
-    margin: 0;
-    outline: none;
-    padding: 1rem 1.3rem;
-    quotes: auto;
-    text-align: center;
+.søg-ind a{
+    color: white;
     text-decoration: none;
-    transition: all .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+}
+.button-design {
+    margin-top: 1rem;
+    border-radius: 10px;
+    background-color: #934FB3;
+    color: white;
+    height: 50px;
+    border: none;
+    padding: 0 30px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .button-design:hover {
     background-color: #ecb3ae;
     box-shadow: #ecb3ae 0 -6px 8px inset;
     transform: scale(1.125);
-}
-
-.button-design:active {
-    transform: scale(1.025);
-}
-
-.button-design a{
-    text-decoration: none;
 }
 
 /* FOOTER SLUT */
