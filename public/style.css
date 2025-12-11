@@ -362,6 +362,7 @@ body {
     color: darkgray;
     margin-right: 15px;
     margin-left: 15px;
+
 }
 
 .overlay {
@@ -390,7 +391,6 @@ body {
 
 footer {
     background: linear-gradient(270deg, rgba(116, 3, 168, 1) 11%, rgba(236, 236, 236, 0.16) 100%);
-
 }
 
 .Ek-informations {
