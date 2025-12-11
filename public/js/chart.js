@@ -154,7 +154,7 @@ function renderChart(labels, values, userValues) {
             },
             plugins: {
                 legend: {
-                    display: false
+                    display: true
                 },
                 title: {
                     display: true,
