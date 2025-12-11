@@ -5,23 +5,17 @@ const cleave = new Cleave('#yearly-salary', {
     numeralDecimalMark: ','
 });
 
-// Swiper function
-// =====================================================================
-// 1. Initialiser Swiper-karrusellen
-// =====================================================================
-// Swiper styrer din billed/video-karrusel med coverflow-effekt.
-// Her konfigurerer vi hvordan slideren skal opføre sig.
-// =====================================================================
+// Karrusel
 
-
-
+// Fået hjælp/inspiration af denne video -> https://www.youtube.com/watch?v=hdO3l6Ed8-c&t=312s
+// Swiper styrer vores video karrusel med en coverflow effekt
 const swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: "auto",
 
-    // Coverflow-stil
+    // Coverflow-stil -> Måden vores karrusel kører på.
     coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -30,111 +24,73 @@ const swiper = new Swiper(".mySwiper", {
         slideShadows: true
     },
 
-    // Pagination-prikker under slideren
-    pagination: {
-        el: ".swiper-pagination"
-    },
-
-    // Event der kører når et slide skifter
+// Til denne del har vi fået hjælp af ChatGPT
+// Funktion som gør at når karrusellen kører stopper videoerne omkring den
     on: {
         slideChange: function () {
-            handleVideos(); // Stopper gamle videoer og starter den nye
+            handleVideos();
         }
     }
 });
 
-
-
-// =====================================================================
-// 2. Funktion der styrer afspilning af videoer
-// =====================================================================
-// Denne funktion finder alle videoer i slideren. Kun den aktive video
-// må spille – alle andre pauses og nulstilles.
-// =====================================================================
+// Til denne del har vi fået hjælp af ChatGPT
+// Denne funktion sørger for at det kun er den aktive video som afspilles.
+// Når karrusellen står på den aktive video stopper de andre videoer omkring og nulstilles / starter forfra.
 
 function handleVideos() {
     const videos = document.querySelectorAll(".slide-video");
 
-    // Almindelig for-løkke i stedet for forEach med arrow function
+
     for (let i = 0; i < videos.length; i++) {
         if (i === swiper.activeIndex) {
-            videos[i].play(); // Aktiv video spiller
+            videos[i].play();
         } else {
-            videos[i].pause();         // Stop video
-            videos[i].currentTime = 0; // Spol tilbage til start
+            videos[i].pause();
+            videos[i].currentTime = 0;
         }
     }
 }
 
-
-
-// =====================================================================
-// 3. AutoAdvance – skift slide automatisk hvert 17 sekund
-// =====================================================================
-// Denne funktion skifter til næste slide og kalder sig selv igen.
-// Arrow function i setTimeout er fjernet og erstattet med function.
-// =====================================================================
+// Denne funktion har vi fået guiding af af ChatGPT.
+// Vi sørger for ved denne funktion at videoen skifter slide når der er gået 17 sekunder.
+// Vores videoer er 17 sekunder lange. Derfor givet dette tids interval
 
 function autoAdvance() {
     setTimeout(function () {
-        swiper.slideNext(); // Gå til næste slide
-        autoAdvance();      // Kør funktionen igen → loop
+        swiper.slideNext();
+        autoAdvance();
     }, 17100);
 }
 
 
-// =====================================================================
-// 4. Mute / unmute-knap
-// =====================================================================
-// Denne knap muter samtlige videoer i slideren og skifter ikon.
-// Ingen arrow functions — alt er almindelige funktioner.
-// =====================================================================
+// MUTE KNAP
 
-// -------------------------------------------------------------
-// 1. Hent mute-knappen fra HTML'en
-// -------------------------------------------------------------
+// Næste del har vi fået hjælp af ChatGPT -> Her laver vi en mute knap
+// Her skal vi kunne slå lyd til og fra videoen ved hjælp af denne knap.
+
 const muteBtn = document.querySelector(".mute-button");
-// Dette finder <button class="mute-button">🔉</button>
 
 
-// -------------------------------------------------------------
-// 2. Tilføj en klik-event på knappen
-// Når knappen klikkes, kaldes funktionen toggleMute()
-// -------------------------------------------------------------
+// Bruger EventListerne -> Når knappen klikkes kaldes funktionen toggleMute
 muteBtn.addEventListener("click", toggleMute);
 
 
-// -------------------------------------------------------------
-// 3. Funktion der muter / unmuter alle videoer i karrusellen
-// -------------------------------------------------------------
 function toggleMute() {
 
-    // Hent alle video-elementer i slideren
     const videos = document.querySelectorAll(".slide-video");
 
-    // Variabel til at gemme nuværende mute-status
-    // (vi antager at alle videoer har samme mute-state)
     let isMuted = false;
 
-    // Hvis der findes mindst én video, tjek om den er mutet
     if (videos.length > 0) {
         isMuted = videos[0].muted;
     }
-
-    // ---------------------------------------------------------
-    // 4. Skift mute-status på alle videoer
-    // Hvis de var mutede → unmute
-    // Hvis de ikke var mutede → mute
-    // ---------------------------------------------------------
+// I denne del skifter vi "mute status" på videoerne.
+// Hvis videoerne er mutede bliver de unmutede og omvendt
     for (let i = 0; i < videos.length; i++) {
         videos[i].muted = !isMuted;
     }
 
-    // ---------------------------------------------------------
-    // 5. Opdater ikon på knappen så brugeren kan se status
-    // 🔉  = lyd slået til
-    // 🔇  = lyd slået fra
-    // ---------------------------------------------------------
+    // Her skifter vi ikonet alt efter om videoen er Mute eller unmute
     if (isMuted) {
         muteBtn.textContent = "🔉";  // Lyd TIL
     } else {
@@ -144,9 +100,9 @@ function toggleMute() {
 
 
 
-// =====================================================================
-// 5. Startfunktioner ved første load
-// =====================================================================
+// Næste del har vi fået guiding af ChatGPT
+// Start karrusel når den er synlig
+
 
 // Start styring af videoer (aktiver den første video)
 handleVideos();
@@ -154,17 +110,15 @@ handleVideos();
 // Start automatisk slide-skift
 autoAdvance();
 
-// =====================================================================
-// Start video kun når dens slide er synlig i viewport
-// =====================================================================
+// Starter videoen i karrusellen når den er synlig på hjemmesiden
 
-// 6. Lav observeren
+
 const videoObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
         const video = entry.target;
 
         if (entry.isIntersecting) {
-            // Kun start videoen hvis det også er den aktive slide
+
             const slideIndex = parseInt(video.getAttribute("data-index"));
 
             if (slideIndex === swiper.activeIndex) {
@@ -175,55 +129,25 @@ const videoObserver = new IntersectionObserver(function (entries) {
             video.currentTime = 0;
         }
     });
+    //nedenunder beskriver vi at videoen først skal afspilles, når videoen er 100% synlig.
+    // 1 = 100%
 }, {
-    threshold: 0.5 // 50% synlig før den må starte
+    threshold: 1
 });
 
-// 7. Tilføj observer til alle videoer
+
 const allVideos = document.querySelectorAll(".slide-video");
 allVideos.forEach(function (video, index) {
     video.setAttribute("data-index", index);
     videoObserver.observe(video);
 });
 
-// -------------------------------------------------------------
-// 1. Tilføj en klik-event på knappen
-// Når knappen klikkes, kaldes funktionen toggleMute()
-// -------------------------------------------------------------
-muteBtn.addEventListener("click", toggleMute);
 
 
-// -------------------------------------------------------------
-// 2. Funktion der muter / unmuter alle videoer i karrusellen
-// -------------------------------------------------------------
-function toggleMute() {
 
-    // Hent alle video-elementer i slideren
-    const videos = document.querySelectorAll(".slide-video");
 
-    // Variabel til at gemme nuværende mute-status
-    // (vi antager at alle videoer har samme mute-state)
-    let isMuted = false;
-
-    // Hvis der findes mindst én video, tjek om den er mutet
-    if (videos.length > 0) {
-        isMuted = videos[0].muted;
-    }
-
-    // ---------------------------------------------------------
-    // 3. Skift mute-status på alle videoer
-    for (let i = 0; i < videos.length; i++) {
-        videos[i].muted = !isMuted;
-    }
-
-    // 4. Opdater ikon på knappen så brugeren kan se status
-    if (isMuted) {
-        muteBtn.textContent = "🔉";  // TIL
-    } else {
-        muteBtn.textContent = "🔇";  // FRA
-    }
-}
-
+// Til næste del har vi fået guiding af ChatGPT
+// Vi laver et side Panel med information om hvordan vores lønberegner fungerer
 const openPanel = document.getElementById("open-panel");
 const closePanel = document.getElementById("close-panel");
 const panel = document.getElementById("sidepanel");
@@ -246,4 +170,13 @@ closePanel.addEventListener("click", function() {
 overlay.addEventListener("click", function() {
     panel.classList.remove("active");
     overlay.classList.remove("active");
+});
+
+//lav link til Ek's udannelser, via button
+// Find knappen med id
+const button = document.getElementById('education-button');
+
+// Tilføj klik-funktion
+button.addEventListener('click', function() {
+    window.location.href = "https://www.ek.dk/videregaaende-uddannelser/alle-videregaaende-uddannelser?interests=IT+og+multimedie";
 });
