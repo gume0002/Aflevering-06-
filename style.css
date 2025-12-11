@@ -378,6 +378,14 @@ footer {
     justify-content: space-between;
     padding: 50px;
 }
+.info-ek a {
+    color: rgba(11, 10, 10, 0.92);
+    text-decoration: none;
+}
+
+.info-ek a:hover {
+    text-decoration: underline;
+}
 
 .søg-ind{
     font-size: 25px;
