@@ -2,14 +2,19 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors'
+import path from 'path'
 import { createClient } from '@supabase/supabase-js';
 
+/*
+    Vi har brugt Gemini og 'Supabase's officielle api dokumentationer til at connecte vores express server
+    til vores supabase database. Serveren er sat op med viden fra skole samt hjælp fra Gemini til debugging.
+
+*/
 const PORT = process.env.PORT || 3001;
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const supabaseAdmin = createClient(SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY, {
     auth: { persistSession: false }, // Prevent caching of user session
 });
-
 const app = express();
 
 // Middleware 1: Enable CORS (Allows your frontend to talk to this server)
@@ -20,6 +25,7 @@ const app = express();
     next();
 });*/
 
+app.use(express.static(path.join(process.cwd(), "public")));
 app.use(cors());
 
 // Middleware 2: JSON body parsing
