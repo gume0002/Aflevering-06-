@@ -13,6 +13,8 @@ const cleave = new Cleave('#yearly-salary', {
 // Her konfigurerer vi hvordan slideren skal opføre sig.
 // =====================================================================
 
+
+
 const swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
