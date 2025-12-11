@@ -77,7 +77,7 @@ function autoAdvance() {
     setTimeout(function () {
         swiper.slideNext(); // Gå til næste slide
         autoAdvance();      // Kør funktionen igen → loop
-    }, 17000);
+    }, 17100);
 }
 
 
@@ -153,7 +153,37 @@ handleVideos();
 // Start automatisk slide-skift
 autoAdvance();
 
+// =====================================================================
+// Start video kun når dens slide er synlig i viewport
+// =====================================================================
 
+// 6. Lav observeren
+const videoObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        const video = entry.target;
+
+        if (entry.isIntersecting) {
+            // Kun start videoen hvis det også er den aktive slide
+            const slideIndex = parseInt(video.getAttribute("data-index"));
+
+            if (slideIndex === swiper.activeIndex) {
+                video.play();
+            }
+        } else {
+            video.pause();
+            video.currentTime = 0;
+        }
+    });
+}, {
+    threshold: 0.5 // 50% synlig før den må starte
+});
+
+// 7. Tilføj observer til alle videoer
+const allVideos = document.querySelectorAll(".slide-video");
+allVideos.forEach(function (video, index) {
+    video.setAttribute("data-index", index);
+    videoObserver.observe(video);
+});
 
 // -------------------------------------------------------------
 // 1. Tilføj en klik-event på knappen
