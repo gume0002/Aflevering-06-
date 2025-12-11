@@ -129,8 +129,10 @@ const videoObserver = new IntersectionObserver(function (entries) {
             video.currentTime = 0;
         }
     });
+    //nedenunder beskriver vi at videoen først skal afspilles, når videoen er 100% synlig.
+    // 1 = 100%
 }, {
-    threshold: 0.5
+    threshold: 1
 });
 
 
@@ -168,4 +170,13 @@ closePanel.addEventListener("click", function() {
 overlay.addEventListener("click", function() {
     panel.classList.remove("active");
     overlay.classList.remove("active");
+});
+
+//lav link til Ek's udannelser, via button
+// Find knappen med id
+const button = document.getElementById('education-button');
+
+// Tilføj klik-funktion
+button.addEventListener('click', function() {
+    window.location.href = "https://www.ek.dk/videregaaende-uddannelser/alle-videregaaende-uddannelser?interests=IT+og+multimedie";
 });
