@@ -23,7 +23,7 @@ async function fetchSalariesAsync() {
         // Pauses execution until the JSON parsing promise resolves
         data = await response.json();
 
-        // Example: extract labels and values for Chart.js
+        // Extract labels and values for Chart.js
         labels = data.map(row => row.year);
         values = data.map(row => row.salary);
 
