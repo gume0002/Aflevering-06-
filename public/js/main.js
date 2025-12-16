@@ -1,3 +1,4 @@
+// Tilføjet et library der kan style vores input felt med tusinde-separatorer 
 const cleave = new Cleave('#yearly-salary', {
     numeral: true,
     numeralThousandsGroupStyle: 'thousand',
