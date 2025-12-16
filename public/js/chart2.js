@@ -13,7 +13,7 @@ const salaryInput = document.getElementById('yearly-salary');
 async function fetchSalariesAsync() {
     try {
         // Pauses execution until the fetch promise resolves
-        const response = await fetch('http://localhost:3001/api/salaries');
+        const response = await fetch('/public/js/data/data.json');
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -24,7 +24,7 @@ async function fetchSalariesAsync() {
 
         // Extract labels and values for Chart.js
         labels = data.map(row => row.year);
-        values = data.map(row => row.salary);
+        values = data.map(row => row.avg);
 
         console.log('Data from server:', data);
         // return data
@@ -52,7 +52,7 @@ function handleCalculationExecution() {
     let cleanedValue = salaryInput.value.replace(/[^\d]/g, ''); // Remove all non-digit characters
     let userValue = parseFloat(cleanedValue);
     let newValue = userValue
-    const itAVGLast = data[data.length-1].salary
+    const itAVGLast = data[data.length-1].avg
 
     if (isNaN(userValue) || userValue <= 0) {
         alert("Please enter a valid salary.");
