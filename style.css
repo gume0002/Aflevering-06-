@@ -1,0 +1,588 @@
+/* HELE HJEMMESIDEN */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* HELE HJEMMESIDEN SLUT */
+
+/* LOGO START */
+.logo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    opacity: 40%;
+}
+
+
+
+/* LOGO SLUT */
+
+/* FRONT PAGE / HERO IMAGE */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 797px;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(116, 3, 168, 1) 11%, rgba(236, 236, 236, 0.16) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero img {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
+    z-index: 3;
+    margin-left: 45rem;
+    margin-top: 140px;
+    border-radius: 130px 500px;
+}
+
+/* FRONT PAGE / HERO TEXT */
+
+.hero-text h1 {
+    position: absolute;
+    top: 27%;
+    left: 10%;
+    max-width: 5%;
+    transform: translateY(-50%);
+    z-index: 3;
+    color: black;
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+.red-word {
+    color: #ecb3ae;
+}
+
+
+.hero-text em {
+    position: absolute;
+    left: 10%;
+    top: 55%;
+    max-width: 30%;
+    transform: translateY(-50%);
+    z-index: 3;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.hero h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 50px;
+}
+
+/* FRONT PAGE / HERO TEXT SLUT */
+
+/* FAKTA BOKSE */
+
+.about {
+    margin-top: 15vh;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 40px;
+}
+
+.fakta {
+    background: white;
+    z-index: 5;
+}
+
+.fakta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Fået hjælp fra chatgpt */
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 1.0rem auto;
+    margin-bottom: 15vh;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+.fakta div {
+    transition: 0.3s ease;
+    outline: 2px solid transparent;
+}
+
+.fakta div:hover {
+    outline: 2px solid black;
+    background-color: #934FB3;
+    transform: translateY(-5px);
+}
+
+.fakta img {
+    margin-bottom: 15px;
+}
+
+.fakta div {
+    background: #F0D4FC;
+    border: 1px solid #ececec;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    padding: 2rem;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.fakta div:hover {
+    color: white;
+}
+
+/* FAKTA BOKSE SLUT */
+.small-text{
+    font-size: 13px;
+    font-weight: 200;
+    margin: 0px;
+
+}
+
+/* KARRUSEL START */
+
+.karrusel {
+    position: relative;
+    height: 100vh;
+    background-color: #ececec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.karrusel .content {
+    height: 27rem;
+    width: 48rem;
+    background-color: white;
+    border-radius: .7rem;
+    overflow: hidden;
+}
+
+.content img {
+    width: 100%;
+    border-bottom-left-radius: .6rem;
+    border-bottom-right-radius: .6rem;
+}
+
+/* VENSTRE FADE */
+
+
+.karrusel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to right, #ececec 30%, transparent);
+    z-index: 2;
+}
+
+/* HØJRE FADE */
+.karrusel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to left, #ececec 30%, transparent);
+    z-index: 2;
+}
+
+/* Mute knap */
+.mute-button {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 250%;
+    z-index: 10;
+    border-radius: 50px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mute knap SLUT */
+
+/* KARRUSEL SLUT */
+
+.beregner-h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.chart-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin-bottom: 70px;
+}
+
+.info-box {
+    background-color: #CB87DE;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    flex: 1 1 320px;
+    max-width: 450px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chart {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chart {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input-field {
+    margin-top: 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;   /* mellemrum mellem label/input og "før skat" */
+}
+
+#submit-button {
+    margin-top: 1rem;
+    border-radius: 10px;
+    background-color: #934FB3;
+    color: white;
+    height: 40px;
+    border: none;
+    padding: 0 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.beregner-h1 {
+    text-align: center;
+}
+
+
+#submit-button:hover {
+    opacity: 0.9;
+}
+
+.salary-difference-div {
+    display: flex;
+    justify-content: center;
+}
+
+.salary-difference {
+    background-color: #934FB3;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.highlight-number {
+    color: #ecb3ae;
+    font-weight: 750;
+}
+
+/* SIDEPANEL */
+
+.sidepanel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: white;
+    transition: 0.3s ease;
+    z-index: 1000;
+    color: black;
+}
+
+.sidepanel.active {
+    right: 0;
+}
+
+.panel-text {
+    color: black;
+    text-decoration: none;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.panel-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 200;
+}
+
+.panel-link:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+#panel-info {
+    color: darkgray;
+    margin-right: 15px;
+    margin-left: 15px;
+
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 900;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidepanel p {
+    pointer-events: none;
+    text-decoration: none;
+}
+
+/* SIDEPANEL SLUT */
+
+/* FOOTER START */
+
+footer {
+    background: linear-gradient(270deg, rgba(116, 3, 168, 1) 11%, rgba(236, 236, 236, 0.16) 100%);
+}
+
+.Ek-informations {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+.info-ek a {
+    color: rgba(11, 10, 10, 0.92);
+    text-decoration: none;
+}
+
+.info-ek a:hover {
+    text-decoration: underline;
+}
+
+.søg-ind{
+    font-size: 25px;
+    text-align: center;
+}
+.søg-ind a{
+    color: white;
+    text-decoration: none;
+}
+
+.button-design {
+    margin-top: 1rem;
+    border-radius: 10px;
+    background-color: #934FB3;
+    color: white;
+    height: 50px;
+    border: none;
+    padding: 0 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button-design:hover {
+    background-color: #ecb3ae;
+    box-shadow: #ecb3ae 0 -6px 8px inset;
+    transform: scale(1.125);
+}
+
+/* FOOTER SLUT */
+
+
+
+/* Responsiv til Mobil Telefon*/
+
+/* Denne del har vi fået hjælp til af ChatGPT */
+@media (max-width: 768px) {
+
+    /* Generelt */
+    body {
+        font-size: 14px;
+    }
+
+    .logo {
+        top: 10px;
+        right: 10px;
+        max-width: 80px;
+    }
+
+    /* HERO-SEKTION */
+    .hero {
+        height: auto;
+        padding: 80px 1.5rem 2rem;
+    }
+
+    .hero img {
+        position: static;
+        width: 90%;
+        height: auto;
+        margin: 2rem auto 0;
+        border-radius: 40px;
+    }
+
+    .hero::after {
+        background: linear-gradient(90deg, rgba(116, 3, 168, 1) -125%, rgba(236, 236, 236, 0.16) 100%);
+    }
+
+    .hero-text h1,
+    .hero-text em {
+        position: static;
+        max-width: 100%;
+        transform: none;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .hero-text h1 {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-text em {
+        font-size: 1rem;
+    }
+
+    /* FAKTA & ABOUT */
+    .about {
+        margin-top: 8vh;
+        margin-left: 0;
+        font-size: 1.4rem;
+        padding: 0 1.5rem;
+    }
+
+    .fakta {
+        grid-template-columns: 1fr; /* 1 kolonne på mobil */
+        gap: 1.5rem;
+        margin: 1.5rem 1.5rem 5rem;
+    }
+
+    .fakta div {
+        padding: 1.5rem;
+    }
+
+    /* KARRUSEL */
+    .karrusel {
+        height: auto;
+        padding: 3rem 1rem;
+    }
+
+    .karrusel .content {
+        width: 100%;
+        height: auto;
+        border-radius: .7rem;
+    }
+
+    .content img {
+        border-radius: 0 0 .7rem .7rem;
+    }
+
+    /* Skjul de brede fade på mobil eller gør dem smallere */
+    .karrusel::before,
+    .karrusel::after {
+        width: 80px;
+    }
+
+    .mute-button {
+        top: 0.5rem;
+        font-size: 1.5rem;
+        border-width: 1px;
+    }
+
+    /* BEREGNER / CHART */
+    .chart-section {
+        flex-direction: column;
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    .info-box {
+        max-width: 100%;
+        min-height: auto;
+        padding: 1.5rem;
+    }
+
+    .chart {
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+
+    .salary-difference {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* SIDEPANEL */
+    .sidepanel {
+        width: 100%;
+        right: -100%;
+    }
+
+    /* FOOTER */
+    .Ek-informations {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+
+    .søg-ind {
+        font-size: 1.2rem;
+    }
+
+    .button-design {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* Repsonsiv del slut */
