@@ -13,7 +13,7 @@ const salaryInput = document.getElementById('yearly-salary');
 async function fetchSalariesAsync() {
     try {
         // Pauses execution until the fetch promise resolves
-        const response = await fetch('/js/data/data.json');
+        const response = await fetch('js/data/data.json');
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
