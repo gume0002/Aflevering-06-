@@ -1,47 +1,47 @@
 // Charten er lavet ved hjælp af sparring med OpenAI
 // Brugt til at lave overskrifter til koden
-let labels;
-let values;
-let myChart = null;
-let data;
+let labels
+let values
+let myChart = null
+let data
 
-const saveButton = document.getElementById('submit-button');
-const salaryInput = document.getElementById('yearly-salary');
+const saveButton = document.getElementById('submit-button')
+const salaryInput = document.getElementById('yearly-salary')
 
 
 // Fetch function
 async function fetchSalariesAsync() {
     try {
         // Pauses execution until the fetch promise resolves
-        const response = await fetch('http://localhost:3001/api/salaries');
+        const response = await fetch('http://localhost:3001/api/salaries')
 
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            throw new Error(`HTTP error! Status: ${response.status}`)
         }
 
         // Pauses execution until the JSON parsing promise resolves
-        data = await response.json();
+        data = await response.json()
 
         // Extract labels and values for Chart.js
-        labels = data.map(row => row.year);
-        values = data.map(row => row.salary);
+        labels = data.map(row => row.year)
+        values = data.map(row => row.salary)
 
-        console.log('Data from server:', data);
+        console.log('Data from server:', data)
         // return data
         return renderChart(labels, values, null)
 
     } catch (error) {
         // Catches any error from the fetch, response.json(), or the HTTP check
-        console.error('Error:', error);
+        console.error('Error:', error)
     }
 }
 
 // Call the fetch function
 (async () => {
     try {
-        await fetchSalariesAsync();
+        await fetchSalariesAsync()
     } catch (e) {
-        console.error("Fatal Error during script execution:", e);
+        console.error("Fatal Error during script execution:", e)
     }
 })();
 
@@ -49,7 +49,7 @@ async function fetchSalariesAsync() {
 // Calculate and display user salary
 function handleCalculationExecution() {
     let userSalaryArray = []
-    let cleanedValue = salaryInput.value.replace(/[^\d]/g, ''); // Remove all non-digit characters
+    let cleanedValue = salaryInput.value.replace(/[^\d]/g, '') // Remove all non-digit characters
     let userValue = parseFloat(cleanedValue);
     let newValue = userValue
     const itAVGLast = data[data.length-1].salary

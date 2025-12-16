@@ -49,13 +49,13 @@ async function fetchSalariesAsync() {
 // Calculate and display user salary
 function handleCalculationExecution() {
     let userSalaryArray = []
-    let cleanedValue = salaryInput.value.replace(/[^\d]/g, ''); // Remove all non-digit characters
-    let userValue = parseFloat(cleanedValue);
+    let cleanedValue = salaryInput.value.replace(/\D/g, ''); // Remove all non-digit characters
+    let userValue = parseFloat(cleanedValue)
     let newValue = userValue
     const itAVGLast = data[data.length-1].avg
 
     if (isNaN(userValue) || userValue <= 0) {
-        alert("Please enter a valid salary.");
+        alert("Please enter a valid salary.")
         return;
     }
 
